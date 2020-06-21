@@ -1,0 +1,48 @@
+img{
+    margin-left: 150px;
+    width: 80%;
+}
+
+
+.black{
+    font-weight: bolder;
+}
+
+.question{
+    margin-left: 200px;
+    width: 70%;
+}
+/*footer*/
+.icon{
+    padding-top: 15px;
+    font-size: 14px;
+}
+i{
+    
+    font-size: 40px;
+    padding-left: 20px;
+    
+}
+a{
+    color: black;
+}
+.footer{
+    text-align: center;
+    margin-top: 30px;
+   
+
+}
+
+
+@media(max-width: 1000px){
+    img{
+        margin-left:50px;
+    }
+    .question{
+        margin-left: 50px;
+        width: 70%;
+    }
+    i{
+        font-size: 18px;
+    }
+}

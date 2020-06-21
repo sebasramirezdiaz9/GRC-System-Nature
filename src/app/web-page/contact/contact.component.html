@@ -1,0 +1,39 @@
+<mat-card class="fondo">
+  <mat-card-content  class="form">
+    <br>
+    <h1 >CONTACTO</h1>
+    <br>
+        <form >
+
+          <mat-form-field >
+            <input matInput placeholder="Nombre" formControlName="firstname" class="form-control" name="firstname">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input matInput placeholder="Apellidos" formControlName="lastname" class="form-control" name="lastname">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input matInput placeholder="Correo Electronico" formControlName="email" class="form-control" name="email">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <textarea rows="4" cols="50" matInput placeholder="Mensaje" formControlName="message" class="form-control"
+              name="message"></textarea>
+          </mat-form-field>
+          <br>
+          <button mat-raised-button type="submit" style="background-color: green;">Enviar</button>
+          <br>
+        </form>
+        <br>
+  </mat-card-content>
+  <br>
+  <mat-card-footer class="footer" >
+    <a  href=""><i class="fab fa-facebook"></i></a>
+    <a href=""><i class="fab fa-instagram"></i></a>
+    <a href=""><i class="fab fa-whatsapp"></i></a>
+    <br>
+    <mat-icon class="icon">copyright</mat-icon><span>2020 GRC Nature Derechos Reservados </span>
+    <br>
+  </mat-card-footer>
+</mat-card>

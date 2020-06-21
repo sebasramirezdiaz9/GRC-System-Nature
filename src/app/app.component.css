@@ -1,0 +1,31 @@
+mat-toolbar{
+    height: 80px;
+}
+.button.menu{
+    height: 60px;
+}
+.div-menu{
+    padding-top: 25px;
+
+}
+
+.icon{
+    padding-top: 15px;
+    font-size: 14px;
+}
+.footer{
+    text-align: center;
+    margin-top: 30px;
+   
+
+}
+i{
+    
+    font-size: 40px;
+    padding-left: 20px;
+    
+}
+a{
+    color: black;
+}
+

@@ -1,0 +1,154 @@
+<mat-card>
+    <br>
+    <mat-card-title style="text-align: center;">
+        Preguntas Frecuentes
+    </mat-card-title>
+    <br>
+
+
+    <img mat-card-image src="./../../../assets/ayuda.jpg ">
+    <br>
+    <h1 style="text-align: center;"> ¡Todo lo que necesitas saber sobre GRC Nature!</h1>
+    <mat-card class="question">
+    <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title class="black">
+                    Sobre nuestros productos
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-accordion>
+                <!-- Sobre nosotros-->
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          ¿Que son los suplementos alimenticios?
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <p>Son productos a base de hierbas, extractos vegetales, deshidratados o 
+                        concentrados de frutas, 100% naturales, adicionados  de vitaminas o minerales
+                        y cuya finalidad es incrementar la ingesta dietética total, 
+                        para ayudar a complementarla</p>
+                </mat-expansion-panel>
+            </mat-accordion>
+            <br>
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                           ¿Como se que debo comprar?
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <p>En GRC Nature tenemos personal calificado para brindarte un mejor servicio al momento 
+                        de realizar tus compras ya que brindamos atencion personalizada para poder ofrecerte el
+                        producto que mas se adapte a tus necesidades
+                    </p>
+                </mat-expansion-panel>
+            </mat-accordion>
+            <br>
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            ¿Que beneficios tienen los suplementos alimenticio?
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <p>Es necesario aclarar que los suplementos alimenticios no deben sustituir las comidas necesarias 
+                        para mantener una dieta nutritiva. Sin embargo los suplementos alimenticios te ayudan a conpesar las 
+                        deficiencias nutritivas que perjudican tu salud.
+
+                    </p>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </mat-expansion-panel>
+    </mat-accordion>
+    <br>
+    <!------------------------------------------------------------------------------------------------->
+    <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title class="black">
+                   Compras y pedidos
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <!--Compraaas----------------------------------------------------------------------------->
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            ¿Como comprar por telefono?
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <p>Puedes realizar compras llamando a nuestro Centro de Atención Telefónica al 9785421 o del 
+                        interior de la republica sin costo al 01 800 785 12 56 opción 2 del menú, donde un asesor 
+                        podrá ayudarte a realizar tu compra.
+
+                        Nuestro horario es de lunes a domingo de 10:00 de la mañana a 6:00 de la tarde.
+                    </p>
+                </mat-expansion-panel>
+            </mat-accordion>
+            <br>
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            ¿Cuales son los metodos de pago?
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <p>Pensando en ti, en todas nuestras compras nos adaptamos a los montos que mas se ajusten a tu presupuesto,
+                        contando con creditos de 1,2, o hasta 6 meses sin intereses. Para más información 
+                        comunicate con nostros al 9785421 y con gusto te atenderemos.
+                    </p>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </mat-expansion-panel>
+    </mat-accordion>
+    <br>
+    <!-- afiliacion---------------------------------------------------------------------------------->
+    <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title class="black">
+                   Afiliate
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+    <!----------------------------------------------------------------------------------------->
+            <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title >
+                       ¿Como afiliarte a GRC Nature?
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p>Visita a tu centro de Negocios mas cercano, registrate y realiza tu pago en caja
+                    y ahi mismo se te hara entrega de tu kid te afilacion.
+                </p>
+            </mat-expansion-panel>
+        </mat-accordion>
+        <br>
+        <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title >
+                       Beneficios al afiliarte con nostros
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p>Asesoria de negocios <br> Acceso a promociones exclusivas <br> Precios preferenciales
+                    <br>Membresia de por vida <br> Programas de reconocimiento
+                </p>
+            </mat-expansion-panel>
+        </mat-accordion>
+        </mat-expansion-panel>
+    </mat-accordion>
+    <br>
+</mat-card>
+<mat-card-footer class="footer" >
+    <a  href=""><i class="fab fa-facebook"></i></a>
+    <a href=""><i class="fab fa-instagram"></i></a>
+    <a href=""><i class="fab fa-whatsapp"></i></a>
+    <br>
+    <mat-icon class="icon">copyright</mat-icon><span>2020 GRC Nature Derechos Reservados </span>
+    <br>
+  </mat-card-footer>
+
+</mat-card>
