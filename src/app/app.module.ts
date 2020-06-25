@@ -25,6 +25,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 import { MenuComponent } from './web-page/navbar/menu/menu.component';
 import { ToolsComponent } from './web-page/navbar/tools/tools.component';
+import { WelcomeComponent } from './component-web/welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { ToolsComponent } from './web-page/navbar/tools/tools.component';
     LoginComponent,
     MenuComponent,
     ToolsComponent,
+    WelcomeComponent,
   
   ],
   imports: [
