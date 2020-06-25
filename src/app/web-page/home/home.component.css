@@ -35,18 +35,9 @@ a{
 
 
 
-@media(max-width: 1000px){
-    .text{
-        font-size: 12px;
-    }
-    i{
-        font-size: 18px;
-    }
-    
-}
 @media(max-width: 600px){
     .text{
-        font-size: 8px;
+        font-size: 15px;
     }
     
 }

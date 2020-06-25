@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import * as platformBrowser from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +14,18 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { SidenavListComponent } from './web-page/navbar/sidenav-list/sidenav-list.component';
 import { AgmCoreModule} from '@agm/core';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './auth/login/login/login.component';
+
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from 'src/environments/environment';
+import { MenuComponent } from './web-page/navbar/menu/menu.component';
+import { ToolsComponent } from './web-page/navbar/tools/tools.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,10 +35,14 @@ import { MatCarouselModule } from '@ngmodule/material-carousel';
     ContactComponent,
     AboutComponent,
     HeaderComponent,
-    SidenavListComponent
+    SidenavListComponent,
+    LoginComponent,
+    MenuComponent,
+    ToolsComponent,
+  
   ],
   imports: [
-    BrowserModule,
+    platformBrowser.BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
@@ -34,7 +50,15 @@ import { MatCarouselModule } from '@ngmodule/material-carousel';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDpFWj4lMAXPF6su9bX53L1fMs69b0pr10'
     }),
-    MatCarouselModule
+    MatCarouselModule,
+    MatFormFieldModule,
+    FormsModule, 
+    ReactiveFormsModule,
+    HttpClientModule,
+    AngularFirestoreModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig ),
+    AngularFireAuthModule
+
 
   ],
   providers: [],
