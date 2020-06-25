@@ -12,8 +12,13 @@ export class ToolsComponent implements OnInit {
 
   constructor(private authSvc: AuthService) { }
 
-  ngOnInit(): void {
-  }
+  public isLogged= false;
+   
+ 
+  ngOnInit(){
+   }
+
+  
 
   public onToggleSidenav = () => {
     this.sidenavToggle.emit();
@@ -21,8 +26,8 @@ export class ToolsComponent implements OnInit {
 
   onLogout(){
     this.authSvc.logout();
-    
-
   }
+
+ 
 
 }

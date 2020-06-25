@@ -1,4 +1,4 @@
-a {
+.bttn-menu {
    
     text-decoration: none;
     color:grey;
@@ -6,23 +6,20 @@ a {
     cursor: context-menu;
 }
  
-a:hover, a:active{
-    color: green;
-}
+
  
 .navigation-items{
     list-style-type: none;
-    padding-top: 30px;
+    padding-top: 5px;
     margin: 10px;
+    margin-left: 900px
   
 }
  
 mat-toolbar{
 
-    height: 80px;
+    height: 50px;
 }
 
-img{
-    padding-top: 15px;
-}
+
 

@@ -6,6 +6,7 @@ import {ContactComponent } from './web-page/contact/contact.component';
 import { QuestionsComponent} from './web-page/questions/questions.component';
 import { LoginComponent } from './auth/login/login/login.component';
 import { RegisterComponent} from './auth/login/register/register.component';
+import {WelcomeComponent} from './component-web/welcome/welcome.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path:'questions', component: QuestionsComponent},
   {path:'login', component:LoginComponent  },
   {path:'register', component:RegisterComponent},
+  {path: 'welcome', component:WelcomeComponent},
   {path: '**', pathMatch: 'full',redirectTo: 'home'}
 
 ];

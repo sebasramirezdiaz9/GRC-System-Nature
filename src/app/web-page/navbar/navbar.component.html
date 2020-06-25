@@ -1,26 +1,40 @@
-<mat-sidenav-container *ngIf="!isLogged">
-    <mat-sidenav  #sidenav role="navigation">
-        <app-sidenav-list (sidenavClose)="sidenav.close()"></app-sidenav-list>
-    </mat-sidenav>
-    <mat-sidenav-content >
-        <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
-        <main>
-            <router-outlet></router-outlet>
-        </main>
-    </mat-sidenav-content>
-</mat-sidenav-container>
+<ng-template #login>
 
-<mat-sidenav-container *ngIf="isLogged">
-    <mat-sidenav-content >
-        <app-tools>
+    <mat-sidenav-container>
+        <mat-sidenav #sidenav role="navigation">
+            <app-sidenav-list (sidenavClose)="sidenav.close()"></app-sidenav-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
+            <main>
+                <router-outlet></router-outlet>
+            </main>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</ng-template>
 
-        </app-tools>
-        <main>
-            <router-outlet></router-outlet>
-        </main>
-    </mat-sidenav-content>
-    <mat-sidenav >
-        <app-menu></app-menu>
-    </mat-sidenav>
-    
-</mat-sidenav-container>
+<div *ngIf="user$ | async as user; else login">
+    <mat-sidenav-container>
+        <mat-sidenav-content>
+
+            <mat-toolbar>
+                <div fxFlex fxLayout fxHide.xs>
+                    <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+                        <li>
+                            <button class="bttn-menu" mat-button [matMenuTriggerFor]="menu">{{user?.email}} <i
+                                    class="fas fa-user"></i></button>
+                            <!-- #enddocregion mat-menu-trigger-for -->
+                            <mat-menu #menu="matMenu">
+                                <button mat-menu-item (click)="logout()" class="bttn-menu">Cerrar sesion</button>
+                            </mat-menu>
+                        </li>
+
+                    </ul>
+                </div>
+            </mat-toolbar>
+            <main>
+                <router-outlet></router-outlet>
+            </main>|
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
