@@ -1,0 +1,19 @@
+<mat-toolbar>
+    <div>
+        <a routerLink="/home">
+            <img src="assets/logo.png" width="200" height="80">
+        </a>
+
+    </div>
+    <div fxFlex fxLayout fxHide.xs>
+
+        <ul fxLayout fxLayoutGap="15px" class="navigation-items" style="margin-left: 820px;">
+            <li>
+                <a (click)="onLogout()"><i class="fas fa-sign-out-alt"></i> Cerrar sesion </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</mat-toolbar>

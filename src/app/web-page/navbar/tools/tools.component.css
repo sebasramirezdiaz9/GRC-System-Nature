@@ -1,0 +1,28 @@
+a {
+   
+    text-decoration: none;
+    color:grey;
+    font-size: 17px;
+    cursor: context-menu;
+}
+ 
+a:hover, a:active{
+    color: green;
+}
+ 
+.navigation-items{
+    list-style-type: none;
+    padding-top: 30px;
+    margin: 10px;
+  
+}
+ 
+mat-toolbar{
+
+    height: 80px;
+}
+
+img{
+    padding-top: 15px;
+}
+

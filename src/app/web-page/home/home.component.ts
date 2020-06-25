@@ -1,4 +1,5 @@
 import { Component, OnInit, } from '@angular/core';
+import { BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 
 
 
@@ -13,7 +14,22 @@ export class HomeComponent implements OnInit {
   titulo:string="Sobre nuestro enfoque";
   texto2:string="Hola como estan todos";
 
-  constructor() { }
+  public colSize=2;
+  public isMobile:boolean =false;
+
+  constructor(breakpointer:BreakpointObserver) { 
+    breakpointer.observe([
+          Breakpoints.Handset
+    ]).subscribe(result =>{
+        this.isMobile= result.matches;
+        if(this.isMobile){
+            this.colSize=1;
+        }else{
+          this.colSize=2;
+
+        }
+    });
+  }
 
   ngOnInit(): void {
   }

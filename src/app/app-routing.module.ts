@@ -4,6 +4,8 @@ import {HomeComponent } from './web-page/home/home.component';
 import {AboutComponent} from './web-page/about/about.component';
 import {ContactComponent } from './web-page/contact/contact.component';
 import { QuestionsComponent} from './web-page/questions/questions.component';
+import { LoginComponent } from './auth/login/login/login.component';
+import { RegisterComponent} from './auth/login/register/register.component';
 
 
 const routes: Routes = [
@@ -11,6 +13,8 @@ const routes: Routes = [
   {path:'about', component:AboutComponent },
   {path:'contact', component:ContactComponent  },
   {path:'questions', component: QuestionsComponent},
+  {path:'login', component:LoginComponent  },
+  {path:'register', component:RegisterComponent},
   {path: '**', pathMatch: 'full',redirectTo: 'home'}
 
 ];

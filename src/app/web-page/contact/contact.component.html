@@ -3,26 +3,26 @@
     <br>
     <h1 >CONTACTO</h1>
     <br>
-        <form >
-
+        <form id="contactForm" [formGroup]="form" >
           <mat-form-field >
-            <input matInput placeholder="Nombre" formControlName="firstname" class="form-control" name="firstname">
+            <input matInput placeholder="Nombre" formControlName="firstname"  name="firstname" >
           </mat-form-field>
           <br>
           <mat-form-field>
-            <input matInput placeholder="Apellidos" formControlName="lastname" class="form-control" name="lastname">
+            <input matInput placeholder="Apellidos" formControlName="lastname"  name="lastname" >
           </mat-form-field>
           <br>
           <mat-form-field>
-            <input matInput placeholder="Correo Electronico" formControlName="email" class="form-control" name="email">
+            <input matInput placeholder="Correo Electronico" formControlName="email"  name="email" >
           </mat-form-field>
           <br>
           <mat-form-field>
-            <textarea rows="4" cols="50" matInput placeholder="Mensaje" formControlName="message" class="form-control"
+            <textarea rows="4" cols="50" matInput placeholder="Mensaje" formControlName="message" 
               name="message"></textarea>
           </mat-form-field>
           <br>
-          <button mat-raised-button type="submit" style="background-color: green;">Enviar</button>
+          <button id="btnSubmit"  mat-flat-button 
+          style="background-color: green;" (click)="register()" >{{buttionText}}</button>
           <br>
         </form>
         <br>

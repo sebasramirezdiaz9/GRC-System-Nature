@@ -1,0 +1,27 @@
+/*footer*/
+.icon{
+    padding-top: 15px;
+    font-size: 14px;
+}
+i{
+    
+    font-size: 40px;
+    padding-left: 20px;
+    
+}
+a{
+    color: black;
+}
+.footer{
+    text-align: center;
+    margin-top: 30px;
+   
+
+}
+
+@media(max-width: 1000px){
+    
+    i{
+        font-size: 18px;
+    }
+}

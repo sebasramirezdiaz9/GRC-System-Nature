@@ -1,11 +1,26 @@
-<mat-sidenav-container>
-    <mat-sidenav #sidenav role="navigation">
+<mat-sidenav-container *ngIf="!isLogged">
+    <mat-sidenav  #sidenav role="navigation">
         <app-sidenav-list (sidenavClose)="sidenav.close()"></app-sidenav-list>
     </mat-sidenav>
-    <mat-sidenav-content>
+    <mat-sidenav-content >
         <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
         <main>
             <router-outlet></router-outlet>
         </main>
     </mat-sidenav-content>
+</mat-sidenav-container>
+
+<mat-sidenav-container *ngIf="isLogged">
+    <mat-sidenav-content >
+        <app-tools>
+
+        </app-tools>
+        <main>
+            <router-outlet></router-outlet>
+        </main>
+    </mat-sidenav-content>
+    <mat-sidenav >
+        <app-menu></app-menu>
+    </mat-sidenav>
+    
 </mat-sidenav-container>
