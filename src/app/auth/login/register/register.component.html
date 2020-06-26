@@ -1,1 +1,49 @@
-<p>register works!</p>
+<div class="d-flex" id="body">
+    <div id="sidebar-container" class="color">
+        <div class="logo">
+            <a [routerLink]="['/welcome']">
+                <img src="assets/logo-circle.png" style="width: 80px; height: 80px;">
+            </a>
+        </div>
+        <div class="menu">
+            <app-menu></app-menu>
+
+        </div>
+    </div>
+    <div class="card " style="width: 85rem;">
+        <div class="card-header" style="background-color:white;height: 50px;">
+          <h1> Usuarios</h1>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-3 ml-5 pt-3">
+              <h2>Registrar Usuario</h2>
+              <form id="contactForm" [formGroup]="form" >
+                <mat-form-field >
+                  <input  matInput placeholder="Nombre" formControlName="firstname"  name="firstname" >
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                  <input matInput placeholder="Correo Electronico" formControlName="email"  name="email" >
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                  <input matInput  type="password" placeholder="Contraseña" formControlName="password"  name="password" >
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                  <input matInput  type="password" placeholder="Confirmar Contraseña" formControlName="password2"  name="password2" >
+                </mat-form-field>
+                <br>
+                <button type="button" class="btn btn-success">Success</button>
+              </form>
+            </div>
+            <div class="col-md-8">.col-md-8</div>
+          </div>
+    
+        </div>
+        <div>
+            
+        </div>
+      </div>
+</div>
