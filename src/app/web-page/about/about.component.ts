@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 export interface PeriodicElement {
   img: any;
   name:string;
@@ -20,13 +21,27 @@ export class AboutComponent implements OnInit {
   lat: number = 21.9132872;
   lng: number = -102.3170686;
   zoom: number= 16;
+
+  public colSize=2;
+  public isMobile:boolean =false;
   
   displayedColumns: string[] = ['img','name'];
   dataSource = ELEMENT_DATA;
 
 
-  constructor() { }
-  
+  constructor(breakpointer:BreakpointObserver) { 
+    breakpointer.observe([
+          Breakpoints.Handset
+    ]).subscribe(result =>{
+        this.isMobile= result.matches;
+        if(this.isMobile){
+            this.colSize=1;
+        }else{
+          this.colSize=2;
+
+        }
+    });
+  }
 
   ngOnInit(): void {
   }

@@ -41,19 +41,4 @@ a:hover{
     background-color: green !important;
 }
 
-input:hover{
-    background-color: white;
-}
 
-@media(max-width: 700px){
-    #sidebar-container .menu{
-       margin-left: 180px;
-        width: 600px;
-    }
-
-    #sidebar-container .logo{
-        padding: 1rem auto;
-        margin-left: 150px;
-    }
-
-}

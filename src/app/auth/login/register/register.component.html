@@ -1,3 +1,4 @@
+
 <div class="d-flex" id="body">
     <div id="sidebar-container" class="color">
         <div class="logo">
@@ -16,29 +17,64 @@
         </div>
         <div class="card-body">
           <div class="row">
-            <div class="col-md-3 ml-5 pt-3">
+            <div class="col-md-3 ml-2 pt-3">
+              <div class="card p-5">
               <h2>Registrar Usuario</h2>
-              <form id="contactForm" [formGroup]="form" (ngSubmit)="onRegister()">
-                <mat-form-field >
-                  <input  matInput placeholder="Nombre" formControlName="firstname"  name="firstname" >
-                </mat-form-field>
-                <br>
-                <mat-form-field>
-                  <input matInput placeholder="Correo Electronico" formControlName="email"  name="email" >
-                </mat-form-field>
-                <br>
-                <mat-form-field>
-                  <input matInput  type="password" placeholder="Contraseña" formControlName="password"  name="password" >
-                </mat-form-field>
-                <br>
-                <mat-form-field>
-                  <input matInput  type="password" placeholder="Confirmar Contraseña" formControlName="password2"  name="password2" >
-                </mat-form-field>
-                <br>
-                <button type="submit" class="btn btn-success">Success</button>
-              </form>
+             
+                <form id="contactForm" [formGroup]="form" (ngSubmit)="onRegister()">
+                  <mat-form-field>
+                    <input matInput placeholder="Correo Electronico" formControlName="email"  name="email" >
+                  </mat-form-field>
+                  <br>
+                  <mat-form-field>
+                    <input matInput  type="password" placeholder="Contraseña" formControlName="password"  name="password" >
+                  </mat-form-field>
+                  <br>
+                  <mat-form-field>
+                    <input matInput  type="password" placeholder="Confirmar Contraseña" formControlName="password2"  name="password2" >
+                  </mat-form-field>
+                  <br>
+                  <button type="submit" class="btn btn-success  btn-lg btn-block">Registrar</button>
+                </form>
+
+              </div>
+              
             </div>
-            <div class="col-md-8">.col-md-8</div>
+            <div class="col-md-8 pt-3">
+              <div class="card p-5">
+                <h2>Usuarios Registrados</h2>
+                <small>Ejemplo de tabla de usuarios</small>
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">First</th>
+                      <th scope="col">Last</th>
+                      <th scope="col">Handle</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td colspan="2">Larry the Bird</td>
+                      <td>@twitter</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
         <div>

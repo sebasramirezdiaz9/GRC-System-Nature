@@ -21,52 +21,113 @@
         Nuestra mision es mejorar los habitos nutricionales de las personas proporcionando productos inovadores,
         con respaldo cientifico y 100% naturales enfocandonos en las necesidades nutricionales de nuestros clientes.
     </mat-card-content>
-    <mat-grid-list cols="3" rowHeight="2:1">
-        <mat-grid-tile><img class="opacity" mat-card-image src="./../../../assets/1.jpg"></mat-grid-tile>
-        <mat-grid-tile><img class="opacity" mat-card-image src="./../../../assets/3.jpg"></mat-grid-tile>
-        <mat-grid-tile><img class="opacity" mat-card-image src="./../../../assets//2.jpg"></mat-grid-tile>
-    </mat-grid-list>
     <br>
-    <mat-grid-list cols="2" rowHeight="400px">
-        <mat-grid-tile>
-            <agm-map class="columna" [latitude]="lat" [longitude]="lng" [zoom]="zoom">
-                <agm-marker [latitude]="lat" [longitude]="lng">
+   <mat-card-title  class="center">
+       Nuestros Valores
+   </mat-card-title>
+   
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-md-3">
+                
+                    <i style="font-size: 80px;" class="fas fa-hands-helping"></i><br>
+                    <h2>Integridad</h2><br>
+             
+            </div>
+            <div class="col-md-3">
+          
+                    <i style="font-size: 80px;"class="fas fa-user-circle"></i><br>
+                    <h2>Respeto</h2>
+              
+            </div>
 
-                </agm-marker>
-            </agm-map>
-        </mat-grid-tile>
-        <mat-grid-tile class="text">
-            GRC Nature se encuentra en Aguascalientes,Ags. Enviamos productos a toda la Republica Mexicana por medio
-            de nuestra pagina web de envios o por medio de llamadas.
-        </mat-grid-tile>
-    </mat-grid-list>
+            <div class="col-md-3">
+               
+                    <i style="font-size: 80px;"class="fas fa-heart"></i><br>
+                    <h2> Responsabilidad</h2>
+
+               
+
+            </div>
+            <div class="col-md-3">
+                
+                    <i style="font-size: 80px;"class="fas fa-users"></i><br>
+                    <h2>Trabajo en equipo</h2>
+
+              
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card-columns pt-5">
+        <div class="card">
+            <img src="./../../../assets/1.png" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">GRC NATURE CREADA PARA TU ALIMENTACION</h5>
+                <p class="card-text">Nuestros productos estan diseñados para mejor tu salud para ayudarte a sentirte
+                    bien y prevenir enfermedades</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./../../../assets/2.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Juntos hacemos la diferencia</h5>
+                <p class="card-text">Nuestros productos son 100% naturales y lo mejor esque son 100% mexicanos</p>
+            </div>
+        </div>
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Ayudanos a ayudarte</h5>
+                <p class="card-text">Nos compremetemos a mejor tu salud pero no olvides ejercitarte</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./../../../assets/3.png" class="card-img-top" alt="...">
+        </div>
+    </div>
     <br>
-    <mat-card-title class="center">
-       Nuestros Colaboradores
-    </mat-card-title>
-<br>
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-        <ng-container matColumnDef="img">
-            <th mat-header-cell *matHeaderCellDef> </th>
-            <td mat-cell *matCellDef="let element"><img mat-card-avatar src="{{element.img}}"> </td>
-        </ng-container>
-        <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef > Nombre </th>
-            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-        </ng-container>
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
+    
+        <mat-grid-list [cols]='colSize' rowHeight="400px">
+            <mat-grid-tile>
+                <agm-map class="columna" [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+                    <agm-marker [latitude]="lat" [longitude]="lng">
+
+                    </agm-marker>
+                </agm-map>
+            </mat-grid-tile>
+            <mat-grid-tile class="text">
+                GRC Nature se encuentra en Aguascalientes,Ags. Enviamos productos a toda la Republica Mexicana por medio
+                de nuestra pagina web de envios o por medio de llamadas.
+            </mat-grid-tile>
+        </mat-grid-list>
+        <br>
+        <mat-card-title class="center">
+            Nuestros Colaboradores
+        </mat-card-title>
+        <br>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="img">
+                <th mat-header-cell *matHeaderCellDef> </th>
+                <td mat-cell *matCellDef="let element"><img mat-card-avatar src="{{element.img}}"> </td>
+            </ng-container>
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
 
 
-    <mat-card-footer class="footer">
-        <a href=""><i class="fab fa-facebook"></i></a>
-        <a href=""><i class="fab fa-instagram"></i></a>
-        <a href=""><i class="fab fa-whatsapp"></i></a>
-        <br>
-        <mat-icon class="icon">copyright</mat-icon><span>2020 GRC Nature Derechos Reservados </span>
-        <br>
-    </mat-card-footer>
+        <mat-card-footer class="footer">
+            <a href=""><i class="fab fa-facebook"></i></a>
+            <a href=""><i class="fab fa-instagram"></i></a>
+            <a href=""><i class="fab fa-whatsapp"></i></a>
+            <br>
+            <mat-icon class="icon">copyright</mat-icon><span>2020 GRC Nature Derechos Reservados </span>
+            <br>
+        </mat-card-footer>
 
 
 
