@@ -46,7 +46,7 @@ export class ContactComponent implements OnInit {
       email: this.form.value.email,
       message: this.form.value.message
     }
-    this.contacService.sendEmail("http://localhost:3000/sendmail", user).subscribe(
+    this.contacService.sendEmail("http://localhost:3080/api/sendmail", user).subscribe(
       data => {
         let res:any = data; 
         console.log(data);
