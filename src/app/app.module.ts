@@ -1,5 +1,5 @@
 import * as platformBrowser from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,14 +18,15 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './auth/login/login/login.component';
+import { RegisterComponent} from './auth/login/register/register.component';
 
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 import { MenuComponent } from './web-page/navbar/menu/menu.component';
-import { ToolsComponent } from './web-page/navbar/tools/tools.component';
 import { WelcomeComponent } from './component-web/welcome/welcome.component';
+
 
 @NgModule({
   declarations: [
@@ -39,8 +40,8 @@ import { WelcomeComponent } from './component-web/welcome/welcome.component';
     SidenavListComponent,
     LoginComponent,
     MenuComponent,
-    ToolsComponent,
     WelcomeComponent,
+    RegisterComponent
   
   ],
   imports: [
@@ -64,6 +65,10 @@ import { WelcomeComponent } from './component-web/welcome/welcome.component';
 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ],
+
 })
 export class AppModule { }

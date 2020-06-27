@@ -4,6 +4,7 @@ import { AuthService } from '../../service/auth.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -24,13 +25,9 @@ export class LoginComponent implements OnInit {
   }
   async onLogin(){
     const{email, password} = this.loginForm.value;
+    console.log(email);
     try{
       const user = this.authSvc.login(email, password);
-      if(user)
-      {
-        console.log("ya estas adentro");
-        this.router.navigate(['/welcome']);
-      }
     }
     catch(error)
     {
