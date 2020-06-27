@@ -71,4 +71,5 @@ import { WelcomeComponent } from './component-web/welcome/welcome.component';
   ],
 
 })
+
 export class AppModule { }
