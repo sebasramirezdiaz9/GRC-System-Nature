@@ -26,6 +26,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 import { MenuComponent } from './web-page/navbar/menu/menu.component';
 import { WelcomeComponent } from './component-web/welcome/welcome.component';
+import { AccesibilityComponent } from './web-page/accesibility/accesibility.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { WelcomeComponent } from './component-web/welcome/welcome.component';
     LoginComponent,
     MenuComponent,
     WelcomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    AccesibilityComponent
   
   ],
   imports: [

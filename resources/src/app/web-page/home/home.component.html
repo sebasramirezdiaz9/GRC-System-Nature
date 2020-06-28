@@ -29,6 +29,7 @@
 <mat-card>
   <mat-grid-list [cols]='colSize'>
     <mat-grid-tile  class="text">
+     <div class="speaker">
       ENTENDEMOS TU LUCHA
       <br>
       <br>
@@ -37,6 +38,7 @@
       hemos trabajado con varios clientes para <br> lograr que tengan una buena salud y equilibrio en todos
       los aspectos <br>de su vida.
       <br><br>Contáctanos para obtener más información y dar un <br>gran paso en el camino hacia la salud y bienestar.
+     </div>
     </mat-grid-tile>
     <mat-grid-tile>
       <img mat-card-image src="./../../../assets/suplementos-alimenticios.jpg">
@@ -55,3 +57,5 @@
 
 
 </mat-card>
+
+<app-accesibility [WebText]="WebText"></app-accesibility>
