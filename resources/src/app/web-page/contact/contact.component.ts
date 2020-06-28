@@ -13,6 +13,7 @@ export class ContactComponent implements OnInit {
   loading = false;
   buttionText = "Enviar";
   form:any;
+  WebText:string = '';
 
   nameFormControl = new FormControl("", [
     Validators.required,
@@ -30,11 +31,6 @@ export class ContactComponent implements OnInit {
   
     });
     
-  }
-
-  ngOnInit(): void {
-    
-
   }
 
   register() {
@@ -69,8 +65,10 @@ export class ContactComponent implements OnInit {
     );
   }
   
-
+  ngOnInit(): void {
+    document.querySelectorAll('[class="speaker"]').forEach( e => {
+      this.WebText += e.textContent;
+    });
+  }
   
-
-
 }

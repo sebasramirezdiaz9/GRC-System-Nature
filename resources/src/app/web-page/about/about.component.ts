@@ -21,6 +21,7 @@ export class AboutComponent implements OnInit {
   lat: number = 21.9132872;
   lng: number = -102.3170686;
   zoom: number= 16;
+  WebText:string = '';
 
   public colSize=2;
   public isMobile:boolean =false;
@@ -44,6 +45,9 @@ export class AboutComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    document.querySelectorAll('[class="speaker"]').forEach( e => {
+      this.WebText += e.textContent;
+    });
   }
 
 }

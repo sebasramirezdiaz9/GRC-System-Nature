@@ -1,0 +1,16 @@
+<div class="accesibility">
+    <button (click)="start()"  title="Accesibilidad" class="btn btn-primary btn btn-warning" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        <i class="fa fa-assistive-listening-systems"></i>
+    </button>
+</div>
+
+<div class="accesibility2">
+    <div class="collapse" id="collapseExample">
+        <button *ngIf="playing == false" (click)="play()" title="Iniciar" class="btn btn-primary rounded">
+            <i class="fa fa-play"></i>
+        </button>
+        <button  *ngIf="playing == true" (click)="pause()" title="Pause" class="btn btn-primary rounded">
+            <i class="fa fa-pause"></i>
+        </button> 
+    </div>
+</div>

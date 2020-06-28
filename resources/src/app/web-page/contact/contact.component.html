@@ -1,32 +1,34 @@
 <mat-card class="fondo">
-  <mat-card-content  class="form">
-    <br>
-    <h1 >CONTACTO</h1>
-    <br>
-        <form id="contactForm" [formGroup]="form" >
-          <mat-form-field >
-            <input matInput placeholder="Nombre" formControlName="firstname"  name="firstname" >
-          </mat-form-field>
+  <div class="speaker">
+    <mat-card-content  class="form">
+      <br>
+      <h1 >CONTACTO</h1>
+      <br>
+          <form id="contactForm" [formGroup]="form" >
+            <mat-form-field >
+              <input matInput placeholder="Nombre" formControlName="firstname"  name="firstname" >
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+              <input matInput placeholder="Apellidos" formControlName="lastname"  name="lastname" >
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+              <input matInput placeholder="Correo Electronico" formControlName="email"  name="email" >
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+              <textarea rows="4" cols="50" matInput placeholder="Mensaje" formControlName="message" 
+                name="message"></textarea>
+            </mat-form-field>
+            <br>
+            <button id="btnSubmit"  mat-flat-button 
+            style="background-color: green;" (click)="register()" >{{buttionText}}</button>
+            <br>
+          </form>
           <br>
-          <mat-form-field>
-            <input matInput placeholder="Apellidos" formControlName="lastname"  name="lastname" >
-          </mat-form-field>
-          <br>
-          <mat-form-field>
-            <input matInput placeholder="Correo Electronico" formControlName="email"  name="email" >
-          </mat-form-field>
-          <br>
-          <mat-form-field>
-            <textarea rows="4" cols="50" matInput placeholder="Mensaje" formControlName="message" 
-              name="message"></textarea>
-          </mat-form-field>
-          <br>
-          <button id="btnSubmit"  mat-flat-button 
-          style="background-color: green;" (click)="register()" >{{buttionText}}</button>
-          <br>
-        </form>
-        <br>
-  </mat-card-content>
+    </mat-card-content>
+  </div>
   <br>
   <mat-card-footer class="footer" >
     <a  href=""><i class="fab fa-facebook"></i></a>
@@ -37,3 +39,5 @@
     <br>
   </mat-card-footer>
 </mat-card>
+
+<app-accesibility [WebText]="WebText"></app-accesibility>
