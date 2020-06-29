@@ -8,10 +8,10 @@ const router = require('./routes/routes');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors({ origin: "*" }));
-app.use(express.static(__dirname + 'dist/web-page'));
+app.use(express.static(__dirname + 'dist/GRC-SYSTEM-NATURE'));
 
 app.get('/*', function(req,res){
-    res.sendFile(path.join(__dirname+ '/dist/web-page/index.html'));
+    res.sendFile(path.join(__dirname + '/dist/GRC-SYSTEM-NATURE/index.html'));
 });
 app.listen(process.env.PORT||3080, (err, res) => {
     if (err) {
