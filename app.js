@@ -8,7 +8,6 @@ app.use(bodyParser.json());
 
 app.use(express.static(process.cwd()+"/resources/dist/WebPage/"));
 
-
 app.get('/', (req,res) => {
     res.sendFile(process.cwd()+"/resources/dist/WebPage/index.html");
 });
