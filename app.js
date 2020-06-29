@@ -6,10 +6,10 @@ const router = require('./routes/routes');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use(express.static(process.cwd()+"/resources/dist/WebPage/"));
+app.use(express.static(process.cwd()+"'\resources\dist\WebPage\'"));
 
 app.get('/*', (req,res) => {
-    res.sendFile(process.cwd()+"/resources/dist/WebPage/index.html");
+    res.sendFile(process.cwd()+"\resources\dist\WebPage\index.html");
 });
 
 app.listen(process.env.PORT || 3080, (err,res) => {
