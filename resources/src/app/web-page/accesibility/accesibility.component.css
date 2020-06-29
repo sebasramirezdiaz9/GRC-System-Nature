@@ -1,0 +1,14 @@
+.accesibility {
+    position: fixed;
+    right: 0;
+    top: 200px;
+    z-index: 2000;
+}
+
+.accesibility2 {
+    position: fixed;
+    right: 0;
+    top: 240px;
+    z-index: 2000;
+}
+

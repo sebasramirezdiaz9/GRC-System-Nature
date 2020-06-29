@@ -1,9 +1,6 @@
 import { Component, OnInit, } from '@angular/core';
 import { BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 
-
-
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -11,9 +8,9 @@ import { BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 
 })
 export class HomeComponent implements OnInit {
-  titulo:string="Sobre nuestro enfoque";
-  texto2:string="Hola como estan todos";
-
+  titulo:string = "Sobre nuestro enfoque";
+  texto2:string = "Hola como estan todos";
+  WebText:string = '';
   public colSize=2;
   public isMobile:boolean =false;
 
@@ -32,6 +29,9 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    document.querySelectorAll('[class="speaker"]').forEach( e => {
+      this.WebText += e.textContent;
+    });
   }
  
 
