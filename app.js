@@ -12,8 +12,12 @@ app.get('/*', (req,res) => {
     res.sendFile(process.cwd()+"/resources/dist/WebPage/index.html");
 });
 
-app.listen(port, () => {
-    console.log('Servidor en el puerto ' + port);
+app.listen(process.env.PORT || 3080, (err,res) => {
+    if (err) {
+        console.log('Error al levantar el servidor');
+        return;
+    } 
+    console.log('Servidor en el puerto 3080');
 });
 
 app.use(router);
