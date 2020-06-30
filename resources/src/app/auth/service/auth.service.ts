@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { auth } from 'firebase/app';
 import { User } from 'firebase/app';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
@@ -12,8 +12,9 @@ import Swal from 'sweetalert2';
 export class AuthService {
   public user: User;
 
-
-  constructor(public afAuth: AngularFireAuth, private router: Router) { }
+  constructor(public afAuth: AngularFireAuth, 
+              private router: Router) { 
+  }
 
   async login(email: string, password: string) {
     try {
@@ -54,7 +55,6 @@ export class AuthService {
     }
 
   }
-
 
   getCurrenUser() {
     return this.afAuth.authState.pipe(first()).toPromise();
