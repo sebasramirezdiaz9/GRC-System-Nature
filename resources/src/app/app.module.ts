@@ -19,6 +19,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './auth/login/login/login.component';
 import { RegisterComponent} from './auth/login/register/register.component';
+import { ChartsModule } from 'ng2-charts';
 
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
@@ -30,6 +31,7 @@ import { AccesibilityComponent } from './web-page/accesibility/accesibility.comp
 import { SalesComponent } from './auth/sales/sales.component';
 import { CommissionsComponent } from './auth/commissions/commissions.component';
 import { InventoryComponent } from './auth/inventory/inventory.component';
+import { StadisticsComponent } from './auth/stadistics/stadistics.component';
 
 
 @NgModule({
@@ -49,7 +51,8 @@ import { InventoryComponent } from './auth/inventory/inventory.component';
     AccesibilityComponent,
     SalesComponent,
     CommissionsComponent,
-    InventoryComponent
+    InventoryComponent,
+    StadisticsComponent
   
   ],
   imports: [
@@ -58,6 +61,7 @@ import { InventoryComponent } from './auth/inventory/inventory.component';
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
+    ChartsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDpFWj4lMAXPF6su9bX53L1fMs69b0pr10'
     }),
