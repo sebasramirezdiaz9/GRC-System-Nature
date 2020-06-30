@@ -10,6 +10,7 @@ import { WelcomeComponent } from './component-web/welcome/welcome.component';
 import { SalesComponent } from './auth/sales/sales.component';
 import { CommissionsComponent } from './auth/commissions/commissions.component';
 import { InventoryComponent } from './auth/inventory/inventory.component';
+import { StadisticsComponent } from './auth/stadistics/stadistics.component';
 
 const routes: Routes = [
   {path:'home', component:HomeComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path:'system/sales', component: SalesComponent},
   {path:'system/commissions', component: CommissionsComponent},
   {path:'system/inventory', component: InventoryComponent},
+  {path:'system/stadistics', component: StadisticsComponent},
   {path:'**', pathMatch: 'full',redirectTo: 'home'}
 ];
 
