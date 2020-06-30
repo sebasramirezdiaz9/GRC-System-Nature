@@ -34,6 +34,7 @@ import { SalesComponent } from './auth/sales/sales.component';
 import { CommissionsComponent } from './auth/commissions/commissions.component';
 import { InventoryComponent } from './auth/inventory/inventory.component';
 import { StadisticsComponent } from './auth/stadistics/stadistics.component';
+import { ProductsComponent } from './auth/products/products.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { StadisticsComponent } from './auth/stadistics/stadistics.component';
     SalesComponent,
     CommissionsComponent,
     InventoryComponent,
-    StadisticsComponent
+    StadisticsComponent,
+    ProductsComponent
   
   ],
   imports: [
