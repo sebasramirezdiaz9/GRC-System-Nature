@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {HomeComponent } from './web-page/home/home.component';
-import {AboutComponent} from './web-page/about/about.component';
-import {ContactComponent } from './web-page/contact/contact.component';
-import { QuestionsComponent} from './web-page/questions/questions.component';
+import { HomeComponent } from './web-page/home/home.component';
+import { AboutComponent } from './web-page/about/about.component';
+import { ContactComponent } from './web-page/contact/contact.component';
+import { QuestionsComponent } from './web-page/questions/questions.component';
 import { LoginComponent } from './auth/login/login/login.component';
-import { RegisterComponent} from './auth/login/register/register.component';
-import {WelcomeComponent} from './component-web/welcome/welcome.component';
-
+import { RegisterComponent } from './auth/login/register/register.component';
+import { WelcomeComponent } from './component-web/welcome/welcome.component';
+import { SalesComponent } from './auth/sales/sales.component';
+import { CommissionsComponent } from './auth/commissions/commissions.component';
+import { InventoryComponent } from './auth/inventory/inventory.component';
 
 const routes: Routes = [
   {path:'home', component:HomeComponent },
@@ -15,10 +17,12 @@ const routes: Routes = [
   {path:'contact', component:ContactComponent  },
   {path:'questions', component: QuestionsComponent},
   {path:'login', component:LoginComponent  },
-  {path:'register', component:RegisterComponent},
-  {path: 'welcome', component:WelcomeComponent},
-  {path: '**', pathMatch: 'full',redirectTo: 'home'}
-
+  {path:'system/register', component:RegisterComponent},
+  {path:'system/welcome', component:WelcomeComponent},
+  {path:'system/sales', component: SalesComponent},
+  {path:'system/commissions', component: CommissionsComponent},
+  {path:'system/inventory', component: InventoryComponent},
+  {path:'**', pathMatch: 'full',redirectTo: 'home'}
 ];
 
 @NgModule({

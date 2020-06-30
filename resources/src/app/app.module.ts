@@ -27,6 +27,9 @@ import { environment } from 'src/environments/environment';
 import { MenuComponent } from './web-page/navbar/menu/menu.component';
 import { WelcomeComponent } from './component-web/welcome/welcome.component';
 import { AccesibilityComponent } from './web-page/accesibility/accesibility.component';
+import { SalesComponent } from './auth/sales/sales.component';
+import { CommissionsComponent } from './auth/commissions/commissions.component';
+import { InventoryComponent } from './auth/inventory/inventory.component';
 
 
 @NgModule({
@@ -43,7 +46,10 @@ import { AccesibilityComponent } from './web-page/accesibility/accesibility.comp
     MenuComponent,
     WelcomeComponent,
     RegisterComponent,
-    AccesibilityComponent
+    AccesibilityComponent,
+    SalesComponent,
+    CommissionsComponent,
+    InventoryComponent
   
   ],
   imports: [
