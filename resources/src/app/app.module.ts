@@ -56,6 +56,7 @@ import { ProductsComponent } from './auth/products/products.component';
     InventoryComponent,
     StadisticsComponent,
     ProductsComponent
+
   
   ],
   imports: [
@@ -74,7 +75,7 @@ import { ProductsComponent } from './auth/products/products.component';
     ReactiveFormsModule,
     HttpClientModule,
     AngularFirestoreModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig ),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule
 
 
