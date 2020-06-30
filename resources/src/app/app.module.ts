@@ -61,7 +61,7 @@ import { AccesibilityComponent } from './web-page/accesibility/accesibility.comp
     ReactiveFormsModule,
     HttpClientModule,
     AngularFirestoreModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig ),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule
 
 

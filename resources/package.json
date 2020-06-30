@@ -2,7 +2,7 @@
   "name": "web-page",
   "version": "0.0.0",
   "scripts": {
-    "heroku-postbuild": "sad",
+    "heroku-postbuild": "ng build --prod",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
