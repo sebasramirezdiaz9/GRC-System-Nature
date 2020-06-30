@@ -1,0 +1,24 @@
+<div class="d-flex" id="body">
+    <div id="sidebar-container" class="color">
+        <div class="logo">
+            <a [routerLink]="['/system/welcome']">
+                <img src="assets/logo-circle.png" style="width: 80px; height: 80px;">
+            </a>
+        </div>
+        <div class="menu">
+            <app-menu></app-menu>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="alert alert-info" role="alert">
+                Listado de la coleccion productos en la base de datos de FireBase.
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let product of products | async" >
+                    {{product.nombre}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -19,7 +19,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './auth/login/login/login.component';
 import { RegisterComponent} from './auth/login/register/register.component';
+import { ChartsModule } from 'ng2-charts';
 
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -27,7 +30,11 @@ import { environment } from 'src/environments/environment';
 import { MenuComponent } from './web-page/navbar/menu/menu.component';
 import { WelcomeComponent } from './component-web/welcome/welcome.component';
 import { AccesibilityComponent } from './web-page/accesibility/accesibility.component';
-
+import { SalesComponent } from './auth/sales/sales.component';
+import { CommissionsComponent } from './auth/commissions/commissions.component';
+import { InventoryComponent } from './auth/inventory/inventory.component';
+import { StadisticsComponent } from './auth/stadistics/stadistics.component';
+import { ProductsComponent } from './auth/products/products.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +50,13 @@ import { AccesibilityComponent } from './web-page/accesibility/accesibility.comp
     MenuComponent,
     WelcomeComponent,
     RegisterComponent,
-    AccesibilityComponent
+    AccesibilityComponent,
+    SalesComponent,
+    CommissionsComponent,
+    InventoryComponent,
+    StadisticsComponent,
+    ProductsComponent
+
   
   ],
   imports: [
@@ -52,6 +65,7 @@ import { AccesibilityComponent } from './web-page/accesibility/accesibility.comp
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
+    ChartsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDpFWj4lMAXPF6su9bX53L1fMs69b0pr10'
     }),

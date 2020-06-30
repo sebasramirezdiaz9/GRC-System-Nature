@@ -9,30 +9,28 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css'],
   providers: [AuthService]
 })
-export class NavbarComponent  {
- public isLogged= false;
- public user: any;
+export class NavbarComponent {
+  public isLogged = false;
+  public user: any;
+  public user$: Observable<any>;
 
-  
- public user$: Observable<any> =  this.authSvc.afAuth.user;
-  constructor(private authSvc: AuthService,private router:Router) { }
+  constructor(private authSvc: AuthService, private router: Router) {
+    this.user$ = this.authSvc.afAuth.user;
+  }
 
-  
-  async logout()
-  {
-    try{
+  async logout() {
+    try {
       this.authSvc.logout();
       this.router.navigate(['/home']);
     }
-    catch(error)
-    {
+    catch (error) {
       console.log(error);
     }
-    
+
   }
 
 
-  
-  
+
+
 
 }
