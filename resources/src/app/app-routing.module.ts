@@ -11,7 +11,7 @@ import { SalesComponent } from './auth/sales/sales.component';
 import { CommissionsComponent } from './auth/commissions/commissions.component';
 import { InventoryComponent } from './auth/inventory/inventory.component';
 import { StadisticsComponent } from './auth/stadistics/stadistics.component';
-
+import { ProductsComponent } from './auth/products/products.component';
 const routes: Routes = [
   {path:'home', component:HomeComponent },
   {path:'about', component:AboutComponent },
@@ -21,6 +21,7 @@ const routes: Routes = [
   {path:'system/register', component:RegisterComponent},
   {path:'system/welcome', component:WelcomeComponent},
   {path:'system/sales', component: SalesComponent},
+  {path:'system/products', component: ProductsComponent},
   {path:'system/commissions', component: CommissionsComponent},
   {path:'system/inventory', component: InventoryComponent},
   {path:'system/stadistics', component: StadisticsComponent},
