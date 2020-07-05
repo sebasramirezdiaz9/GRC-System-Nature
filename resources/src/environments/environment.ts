@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  apiUrl: 'api/',
 
   firebaseConfig :{
     apiKey: "AIzaSyAtmwHT0lhsQIJSPjFYebLP0mdoMC6VRtA",
