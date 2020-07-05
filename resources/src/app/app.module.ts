@@ -58,6 +58,7 @@ import { ProductsComponent } from './auth/products/products.component';
     InventoryComponent,
     StadisticsComponent,
     ProductsComponent
+
   
   ],
   imports: [
