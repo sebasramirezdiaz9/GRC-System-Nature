@@ -20,6 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './auth/login/login/login.component';
 import { RegisterComponent} from './auth/login/register/register.component';
 import { ChartsModule } from 'ng2-charts';
+import { QRCodeModule } from 'angularx-qrcode';
+
 
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestore } from '@angular/fire/firestore';
@@ -75,10 +77,9 @@ import { ProductsComponent } from './auth/products/products.component';
     ReactiveFormsModule,
     HttpClientModule,
     AngularFirestoreModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule
-
-
+    AngularFireModule.initializeApp(environment.firebaseConfig ),
+    AngularFireAuthModule,
+    QRCodeModule
   ],
   providers: [],
   bootstrap: [AppComponent],

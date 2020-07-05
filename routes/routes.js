@@ -1,11 +1,29 @@
 var express = require('express');
 var router = express.Router();
 const nodemailer = require("nodemailer");
+var admin = require("firebase-admin");
+
+var serviceAccount = require("./../grc-nature-firebase-adminsdk-8wv8j-d90d6d5d52.json");
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://grc-nature.firebaseio.com"
+});
+
+var firebase = admin.database();
 
 const prefix = '/api';
 
+  router.get(prefix + "/dataqr", (req, res) => {
+    var data;
+    firebase.ref('productos').on('value', function(dataSnapshot) {
+      data = dataSnapshot.val();
+      res.send(200, data);
+    })
+    
+  });
+
   router.post(prefix + "/sendmail", (req, res) => {
-    console.log("request came");
     let user = req.body;
     sendMail(user, info => {
       console.log(`El email ha sido enviado ${info.messageId}`);
