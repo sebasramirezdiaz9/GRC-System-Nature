@@ -37,6 +37,7 @@ import { CommissionsComponent } from './auth/commissions/commissions.component';
 import { InventoryComponent } from './auth/inventory/inventory.component';
 import { StadisticsComponent } from './auth/stadistics/stadistics.component';
 import { ProductsComponent } from './auth/products/products.component';
+import { UsersComponent } from './auth/users/users.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { ProductsComponent } from './auth/products/products.component';
     CommissionsComponent,
     InventoryComponent,
     StadisticsComponent,
-    ProductsComponent
+    ProductsComponent,
+    UsersComponent
 
   
   ],

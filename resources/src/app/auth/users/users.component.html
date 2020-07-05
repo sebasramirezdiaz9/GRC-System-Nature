@@ -1,0 +1,22 @@
+<table align="center">
+    <thead>
+        <tr>
+            <th>
+                Usuario
+            </th>
+            <th>
+                Acciones
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>
+                {{ user.email }}
+            </td>
+            <td>
+                <button class="btn btn-primary" type="button">Ver</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
