@@ -1,0 +1,63 @@
+<div class="d-flex" id="body">
+  <div id="sidebar-container" class="color">
+    <div class="logo">
+      <a [routerLink]="['/system/welcome']">
+        <img src="assets/logo-circle.png" style="width: 80px; height: 80px;">
+      </a>
+    </div>
+    <div class="menu">
+      <app-menu></app-menu>
+
+    </div>
+  </div>
+  <div class="card " style="width: 85rem;">
+    <div class="card-header" style="background-color:white;height: 50px;">
+      <h1> Usuarios</h1>
+    </div>
+    <div class="card-body">
+
+      <h2>Registrar Usuario</h2>
+      <div class="text-center" >
+        <br>
+        <form id="contactForm" [formGroup]="form" (ngSubmit)="onRegister()"  novalidate="">
+        <div class="row">
+          <div class="col">
+            
+              <input class="form-control" placeholder="Correo Electronico" formControlName="email" name="email"  [ngClass]="{'is-invalid': !form.get('email').valid}">
+              <div *ngIf="form.controls['email'].errors?.required" class="invalid-feedback">
+                El correo es obligatorio
+            </div>
+          </div>
+          <div class="col">
+           
+              <input class="form-control" type="password" placeholder="Contraseña" formControlName="password" name="password" [ngClass]="{'is-invalid': !form.get('password').valid}">
+              <div *ngIf="form.controls['password'].errors?.required" class="invalid-feedback">
+                La contraseña es obligatoria
+            </div>
+          </div>
+          <div class="col">
+          
+              <input class="form-control" type="password" placeholder="Confirmar Contraseña" formControlName="password2"
+                name="password2" [ngClass]="{'is-invalid': !form.get('password2').valid}">
+                <div *ngIf="form.controls['password'].errors?.required" class="invalid-feedback">
+                  Es necesario que confirmes tu contraseña
+              </div> 
+            
+          </div>
+          <div class="col">
+            <button type="submit" class="btn btn-success">Registrar</button>
+          </div>
+        </div>
+      </form>
+      <br>
+      
+    </div>
+    <br>
+      <h2>Usuarios Registrados</h2>
+       <app-users></app-users>
+    </div>
+  </div>
+  
+</div>
+
+

@@ -1,0 +1,51 @@
+<div class="d-flex" id="body">
+    <div id="sidebar-container" class="color">
+        <div class="logo">
+            <a [routerLink]="['/system/welcome']">
+                <img src="assets/logo-circle.png" style="width: 80px; height: 80px;">
+            </a>
+        </div>
+        <div class="menu">
+            <app-menu></app-menu>
+
+        </div>
+    </div>
+    <div class="card " style="width: 85rem;">
+        <div class="card-header" style="background-color:white;height: 50px;">
+          <h1> Inventario</h1>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                   
+                </div>
+                <div class="col-ml">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                      </form>
+                </div>
+            </div>
+            <br>
+            <table class="table table-hover">
+                <thead >
+                  <tr>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Caducidad</th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  
+                  
+                </tbody>
+              </table>
+      </div>
+    </div>
+<div>

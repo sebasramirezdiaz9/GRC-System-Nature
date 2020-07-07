@@ -1,0 +1,18 @@
+<mat-toolbar>
+
+    <div fxFlex fxLayout fxHide.xs>
+
+        <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+            <li >
+                <button routerLink="/home" (click)="onLogout()" class="bttn-menu"mat-button [matMenuTriggerFor]="menu"> <i class="fas fa-user"></i></button>
+                <!-- #enddocregion mat-menu-trigger-for -->
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item  class="bttn-menu">Cerrar sesion</button>
+                </mat-menu>
+            </li>
+            
+        </ul>
+
+    </div>
+</mat-toolbar>
+<app-menu></app-menu>

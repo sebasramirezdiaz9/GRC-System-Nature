@@ -1,0 +1,68 @@
+a {
+   
+    text-decoration: none;
+    color:grey;
+    font-size: 17px;
+}
+ 
+a:hover, a:active{
+    color: green;
+}
+ 
+.navigation-items{
+    list-style-type: none;
+    padding-top: 30px;
+    margin: 10px;
+  
+}
+ 
+mat-toolbar{
+
+    height: 80px;
+}
+
+img{
+    padding-top: 15px;
+}
+
+.login{
+  
+ margin-left: 540px;
+ font-size: 40px;
+}
+ 
+@media(max-width: 1250px){
+    mat-toolbar{
+        border-radius: 0px;
+    }
+    .login{
+  
+        margin-left: 60px;
+        font-size: 30px;
+       }
+
+    a {
+        font-size: 12px;
+       
+    }
+
+}
+@media(max-width: 700px){
+    mat-toolbar{
+        border-radius: 0px;
+    }
+    .login{
+  
+        margin-left: 10px;
+        font-size: 30px;
+        
+      
+       
+       }
+
+    a {
+        font-size: 10px;
+       
+    }
+
+}

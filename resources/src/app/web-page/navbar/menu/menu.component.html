@@ -1,0 +1,27 @@
+
+            <a routerLink="/system/register" routerLinkActive="active" class="d-block text-light p-3">
+                <mat-icon class="mr-2 lead"  >assignment_ind</mat-icon>Usuarios
+            </a>
+            <a routerLink="/system/stadistics" routerLinkActive="active"  class="d-block text-light p-3">
+                <mat-icon class="mr-2 lead">timeline</mat-icon>Estadisticas
+            </a>
+            <a routerLink="/system/sales" routerLinkActive="active"  class="d-block text-light p-3" *ngIf="user.email === 'admin@grcnature.com'">
+                <mat-icon class="mr-2 lead">local_offer</mat-icon>Ventas
+            </a>
+            <a routerLink="/system/inventory" routerLinkActive="active"  class="d-block text-light p-3">
+                <mat-icon class="mr-2 lead">playlist_add_check</mat-icon>Inventario
+            </a>
+            <a routerLink="/system/products" routerLinkActive="active"  class="d-block text-light p-3">
+                <mat-icon class="mr-2 lead">add_circle</mat-icon>Productos
+            </a>
+            <a routerLink="/system/commissions" routerLinkActive="active"  class="d-block text-light p-3" *ngIf="user.email === 'admin@grcnature.com'">
+                <mat-icon class="mr-2 lead">monetization_on</mat-icon>Comisiones
+            </a>
+            <div fxHide.gt-xs>
+                <a href="" class="d-block text-light p-3">
+                    <i class="fas fa-sign-out-alt mr-2"></i>Cerrar Sesion
+                </a>
+            </div>
+
+
+

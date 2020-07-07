@@ -1,0 +1,38 @@
+#body{
+    overflow: hidden;
+    font-weight: 200;
+    
+   
+   
+}
+
+.color{
+    background-color:rgba(65,196,72);
+}
+
+#sidebar-container{
+    min-height: 100vh;
+   
+}
+
+#sidebar-container .menu{
+    width: 150px;
+    
+}
+
+#sidebar-container .logo{
+    padding: 1rem 2.5rem;
+}
+
+@media(max-width: 700px){
+    #sidebar-container .menu{
+       margin-left: 180px;
+        width: 600px;
+    }
+
+    #sidebar-container .logo{
+        padding: 1rem auto;
+        margin-left: 150px;
+    }
+
+}
