@@ -1,0 +1,45 @@
+<div class="d-flex" id="body">
+    <div id="sidebar-container" class="color">
+        <div class="logo">
+            <a [routerLink]="['/system/welcome']">
+                <img src="assets/logo-circle.png" style="width: 80px; height: 80px;">
+            </a>
+        </div>
+        <div class="menu">
+            <app-menu></app-menu>
+        </div>
+    </div>
+
+    <div class="card " style="width: 85rem;">
+        <div class="card-header" style="background-color:white;height: 50px;">
+            <h1>Registrar Ventas</h1>
+          </div>
+        <div class="card-body mx-auto">
+            <div >
+                <div class="card p-5">
+                    <form>
+                        <div class="form-group">
+                          <label for="">Numero de Productos</label>
+                          <input type="number" class="form-control"  aria-describedby="">
+                          <small id="emailHelp" class="form-text text-muted">Numero de productos diferentes</small>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <input type="number" class="form-control" placeholder="Cantidad">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Producto">
+                            </div>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-success">Registrar</button>
+                      </form>
+                </div>
+                
+              
+            </div>
+            
+    
+        </div>
+    </div>
+</div>
