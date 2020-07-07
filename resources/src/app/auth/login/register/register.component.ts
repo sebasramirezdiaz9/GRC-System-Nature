@@ -30,7 +30,6 @@ export class RegisterComponent implements OnInit {
 
 
 
-
   ngOnInit(): void {}
 
   async onRegister()
