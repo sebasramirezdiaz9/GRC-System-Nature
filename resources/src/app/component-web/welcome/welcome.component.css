@@ -5,6 +5,9 @@
    
    
 }
+.hrefstyle{
+    color: white;
+}
 
 .color{
     background-color:rgba(65,196,72);
@@ -22,6 +25,10 @@
 
 #sidebar-container .logo{
     padding: 1rem 2.5rem;
+}
+
+i{
+    font-size: 50px;
 }
 
 @media(max-width: 700px){
