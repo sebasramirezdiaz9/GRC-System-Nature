@@ -1,1 +1,56 @@
-<p>commissions works!</p>
+<div class="d-flex" id="body">
+    <div id="sidebar-container" class="color">
+        <div class="logo">
+            <a [routerLink]="['/system/welcome']">
+                <img src="assets/logo-circle.png" style="width: 80px; height: 80px;">
+            </a>
+        </div>
+        <div class="menu">
+            <app-menu></app-menu>
+        </div>
+    </div>
+
+    <div class="card " style="width: 85rem;">
+        <div class="card-header" style="background-color:white;height: 50px;">
+            <h1>Comisiones</h1>
+          </div>
+        <div class="card-body">
+            <br>
+            <table class="table table-hover">
+                <thead >
+                  <tr>
+                    <th scope="col">Vendedor</th>
+                    <th scope="col">Ventas</th>
+                    <th scope="col">Importe</th>
+                    <th scope="col"></th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+
+                            </div>
+                            <div class="col-md-2">
+                                <button type="button" class="btn btn-danger"><i class="fas fa-minus-circle"></i></button>
+                            </div>
+                            <div class="col-md-2">
+                                <button type="button" class="btn btn-info"><i class="far fa-file"></i></button> 
+                            </div>
+                        </div>
+                        
+                        
+                    </td>
+                  </tr>    
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
+

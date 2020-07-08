@@ -20,6 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './auth/login/login/login.component';
 import { RegisterComponent} from './auth/login/register/register.component';
 import { ChartsModule } from 'ng2-charts';
+import { QRCodeModule } from 'angularx-qrcode';
+
 
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestore } from '@angular/fire/firestore';
@@ -35,6 +37,8 @@ import { CommissionsComponent } from './auth/commissions/commissions.component';
 import { InventoryComponent } from './auth/inventory/inventory.component';
 import { StadisticsComponent } from './auth/stadistics/stadistics.component';
 import { ProductsComponent } from './auth/products/products.component';
+import { UsersComponent } from './auth/users/users.component';
+import { SalesRegisterComponent } from './auth/sales/sales-register/sales-register.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +59,9 @@ import { ProductsComponent } from './auth/products/products.component';
     CommissionsComponent,
     InventoryComponent,
     StadisticsComponent,
-    ProductsComponent
+    ProductsComponent,
+    UsersComponent,
+    SalesRegisterComponent
 
   
   ],
@@ -75,10 +81,9 @@ import { ProductsComponent } from './auth/products/products.component';
     ReactiveFormsModule,
     HttpClientModule,
     AngularFirestoreModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule
-
-
+    AngularFireModule.initializeApp(environment.firebaseConfig ),
+    AngularFireAuthModule,
+    QRCodeModule
   ],
   providers: [],
   bootstrap: [AppComponent],
