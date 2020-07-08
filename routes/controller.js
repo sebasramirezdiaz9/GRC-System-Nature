@@ -11,6 +11,7 @@ admin.initializeApp({
 
 var firebase = admin.database();  
 
+//Method user into controller
 async function sendMail(user, callback) {
   let transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
@@ -43,7 +44,7 @@ const controller = {
         // List batch of users, 1000 at a time.
         admin.auth().listUsers(1000)
           .then(function(listUsersResult) {
-              res.send(200, listUsersResult);
+              res.status(200).send(listUsersResult);
           })
           .catch(function(error) {
             console.log('Error listing users:', error);
@@ -54,7 +55,7 @@ const controller = {
         var data;
         firebase.ref('productos').on('value', function(dataSnapshot) {
           data = dataSnapshot.val();
-          res.send(200, data);
+          res.status(200).send(data);
         })
         
       },
@@ -64,6 +65,37 @@ const controller = {
         sendMail(user, info => {
           console.log(`El email ha sido enviado ${info.messageId}`);
           res.send(info);
+        });
+      },
+      updateUser(req, res){
+        console.log(req.body);
+        if (req.body.password != null && req.body.password != '') {
+          let query = {
+            email: req.body.email,
+            password: req.body.password
+          }
+        } else {
+          let query = {
+            email: req.body.email,
+          }
+        }
+        console.log('query',query);
+        admin.auth().updateUser(req.body.uid, query)
+        .then(function(userRecord) {
+          res.status(200).send('operacion exitosa');
+        })
+        .catch(function(error) {
+          res.status(500).send(error);
+        });
+         
+      },
+      deleteUser(req, res) {
+        admin.auth().deleteUser(req.query.uid)
+        .then(response => {
+          res.status(200).send('Operacion Exitosa')
+        })
+        .catch(err => {
+          res.status(400).send('Error en el servidor');
         });
       }
 }

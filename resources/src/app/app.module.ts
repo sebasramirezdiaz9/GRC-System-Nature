@@ -62,8 +62,6 @@ import { SalesRegisterComponent } from './auth/sales/sales-register/sales-regist
     ProductsComponent,
     UsersComponent,
     SalesRegisterComponent
-
-  
   ],
   imports: [
     platformBrowser.BrowserModule,
