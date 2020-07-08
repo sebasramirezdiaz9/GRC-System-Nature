@@ -12,34 +12,83 @@
 
     <div class="card " style="width: 85rem;">
         <div class="card-header" style="background-color:white;height: 50px;">
-            <h1>Registrar Ventas</h1>
+            <h1>Registrar Venta</h1>
           </div>
         <div class="card-body mx-auto">
             <div >
                 <div class="card p-5">
                     <form>
                         <div class="form-group">
-                          <label for="">Numero de Productos</label>
-                          <input type="number" class="form-control"  aria-describedby="">
-                          <small id="emailHelp" class="form-text text-muted">Numero de productos diferentes</small>
+                            <select 
+                                class="form-control"
+                                #selected
+                                placeholder="Selecciona un producto"
+                                (change)="select(selected.value)">
+                                <option [value]="null">
+                                </option>
+                                <option [value]="i" *ngFor="let item of products;let i = index">
+                                    {{item.nombre + ' - $' + item.precio}}
+                                </option>
+                            </select>
                         </div>
                         <div class="row">
                             <div class="col">
-                                <input type="number" class="form-control" placeholder="Cantidad">
+                                <label for="">Cantidad</label>
+                                <input type="number" min="1" class="form-control" #quantity (change)="setTotal(quantity.value)">
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Producto">
+                                <label for="">Total $</label>
+                                <input type="text" class="form-control" disabled [value]="total">
                             </div>
                         </div>
                         <br>
-                        <button type="submit" class="btn btn-success">Registrar</button>
+                        <button type="submit" class="btn btn-success" (click)="addProduct()">Agregar</button>
                       </form>
                 </div>
-                
-              
+                <div class="mt-3" *ngIf="saleProducts.length > 0">
+                <label for="" class="text-black-50 font-weight-bold">Venta</label>
+                <table class="table table-striped" align="center">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Total</th>
+                        <th scope="col">Acciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of saleProducts; let i = index">
+                        <th scope="row">{{ i + 1 }}</th>
+                        <td>{{ item.product_name }}</td>
+                        <td>{{ '$ ' + item.precio_unitario }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ '$ ' + item.total }}</td>
+                        <td>
+                            <button class="btn btn-danger" type="button" (click)="deleteProduct(i)">
+                                <i class="fas fa-trash"></i>
+                            </button>  
+                        </td>
+                      </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>{{'$ ' + total_final}}</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                  </table>
+
+                  <div class="card card-body" *ngIf="saleProducts.length > 0">
+                      <button type="button" class="btn btn-primary" (click)="createSale()">Generar Venta</button>
+                  </div>
+                </div>
             </div>
-            
-    
         </div>
     </div>
 </div>

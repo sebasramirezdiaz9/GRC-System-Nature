@@ -27,16 +27,14 @@
                         <th scope="col">Folio</th>
                         <th scope="col">Fecha</th>
                         <th scope="col">Importe</th>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
-                        
+                        <th scope="col">Acciones</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                      <tr *ngFor="let sale of sales">
+                        <td>{{ '#' + sale.folio }}</td>
+                        <td>{{ sale.fecha }}</td>
+                        <td>{{ '$ ' + sale.total }}</td>
                         <td>
                             <div class="row">
                                 <div class="col-md-2">
@@ -49,13 +47,9 @@
                                 <div class="col-md-2">
                                     <button type="button" class="btn btn-info"><i class="far fa-file"></i></button> 
                                 </div>
-                            </div>
-                            
-                            
+                            </div>     
                         </td>
                       </tr>
-                      
-                      
                     </tbody>
                   </table>
 

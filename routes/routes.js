@@ -13,4 +13,6 @@ const prefix = '/api';
 
   router.post(prefix + "/sendmail", controller.sendMailApi);
 
+  router.post(prefix + "/sales", controller.storeSale);
+
 module.exports = router;
