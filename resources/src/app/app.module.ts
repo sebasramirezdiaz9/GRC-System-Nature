@@ -39,6 +39,7 @@ import { StadisticsComponent } from './auth/stadistics/stadistics.component';
 import { ProductsComponent } from './auth/products/products.component';
 import { UsersComponent } from './auth/users/users.component';
 import { SalesRegisterComponent } from './auth/sales/sales-register/sales-register.component';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { SalesRegisterComponent } from './auth/sales/sales-register/sales-regist
     MaterialModule,
     FlexLayoutModule,
     ChartsModule,
+    NgxSpinnerModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDpFWj4lMAXPF6su9bX53L1fMs69b0pr10'
     }),
