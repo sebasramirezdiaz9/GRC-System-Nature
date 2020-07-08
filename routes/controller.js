@@ -70,19 +70,18 @@ const controller = {
       updateUser(req, res){
         console.log(req.body);
         if (req.body.password != null && req.body.password != '') {
-          let query = {
+          var query = {
             email: req.body.email,
             password: req.body.password
           }
         } else {
-          let query = {
+          var query = {
             email: req.body.email,
           }
         }
-        console.log('query',query);
         admin.auth().updateUser(req.body.uid, query)
         .then(function(userRecord) {
-          res.status(200).send('operacion exitosa');
+          res.status(200).send(query);
         })
         .catch(function(error) {
           res.status(500).send(error);

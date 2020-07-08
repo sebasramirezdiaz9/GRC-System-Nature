@@ -15,3 +15,8 @@ footer{
 .card{
     width: 100% !important;
 }
+
+.mat-card
+{
+    min-height: 850px;
+}

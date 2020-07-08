@@ -17,37 +17,39 @@
         <div class="card-body">
             <div class="text-center" >
                 <br>
-                <form id="contactForm" >
+                <form id="contactForm" [formGroup]="form" (ngSubmit)="addProduct()">
                 <div class="row">
                   <div class="col-md-2">
-                    <div [formGroup]="myGroup">
-                      <input class="form-control" placeholder="Producto" formControlName="product" name="product">
-                    </div>
-                  </div>
-                  <div class="col-md-2">
-                      <div [formGroup]="myGroup">
-                        <input class="form-control" type="number" placeholder="Cantidad" formControlName="cant" name="cant">
+                   
+                      <input class="form-control" placeholder="Producto" formControlName="nombre" name="nombre" [ngClass]="{'is-invalid': !form.get('nombre').valid}">
+                      <div *ngIf="form.controls['nombre'].errors?.required" class="invalid-feedback">
+                        El nombre es obligatorio
                       </div>
                   </div>
-                  
-                  <div class="col-md-3">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">Caducidad</div>
-                        </div>
-                        <div [formGroup]="myGroup">
-                            <input class="form-control" type="date" placeholder="Caducidad" formControlName="date"
-                            name="date">
-                          </div>
-                    </div>
-                  </div>
                   <div class="col-md-2">
-                    <div [formGroup]="myGroup">
-                      <input class="form-control" type="number" placeholder="Precio" formControlName="price" name="price">
+                     
+                        <input class="form-control" type="text" placeholder="Activo" formControlName="activo" name="activo" [ngClass]="{'is-invalid': !form.get('activo').valid}">
+                        <div *ngIf="form.controls['activo'].errors?.required" class="invalid-feedback">
+                          El activo es obligatorio
+                        </div>
+                  </div>
+                  
+                  <div class="col-md-2">
+                     
+                    <input class="form-control" type="text" placeholder="Presentación" formControlName="presentacion" name="presentacion" [ngClass]="{'is-invalid': !form.get('presentacion').valid}">
+                    <div *ngIf="form.controls['presentacion'].errors?.required" class="invalid-feedback">
+                      La presentación es obligatoria
                     </div>
+                </div>
+                  <div class="col-md-2">
+                   
+                      <input class="form-control" type="number" placeholder="Precio" formControlName="precio" name="precio" [ngClass]="{'is-invalid': !form.get('precio').valid}">
+                      <div *ngIf="form.controls['precio'].errors?.required" class="invalid-feedback">
+                        El precio es obligatorio
+                      </div>
                     </div>
-                  <div class="col">
-                    <button type="submit" class="btn btn-success">Registrar</button>
+                  <div class="col-md-2">
+                    <button type="submit" class="btn btn-success">Agregar</button>
                   </div>
                 </div>
               </form>
@@ -55,35 +57,60 @@
               
             </div>
             <br>
-            <div class="table-responsive-xl">
-              <table class="table table-hover">
-                <thead >
-                  <tr>
-                    <th scope="col">Producto</th>
-                    <th scope="col">Cantidad</th>
-                    <th scope="col">Caducidad</th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let product of products | async">
-                    <td>{{product.nombre}}</td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>   
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-danger"><i class="fas fa-minus-circle"></i></button>
-                    </td>
-                  </tr>     
-                </tbody>
-              </table>
-
+            <div class="card">
+              <div class="card-body">
+                <div class="table-responsive-xl">
+                  <table class="table table-hover">
+                    <thead >
+                      <tr>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Activo</th>
+                        <th scope="col">Presentación</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Acciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let product of products | async">
+                        <td>{{product.nombre}}
+                          <div class="collapse mt-5" [id]="product.id">
+                            <div class="card card-body">                       
+                                   <div class="form-group">
+                                        <label for="">Nombre</label>
+                                        <input type="text" #name [value]="product.nombre" class="form-control">
+                                   </div>
+                                   <div class="form-group">
+                                        <label for="">Activo</label>                              
+                                        <input type="text" #activo  [value]="product.activo" class="form-control">
+                                   </div>
+                                   <div class="form-group">
+                                      <label for="">Presentación</label>                              
+                                      <input type="text" #presentacion [value]="product.presentacion" class="form-control">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="">Precio</label>                              
+                                    <input type="text" #precio [value]="product.precio" class="form-control">
+                                  </div>
+                                <button type="button" class="btn btn-success"  >Editar</button>                    
+                            </div>
+                        </div>
+                        </td>
+                        <td>{{product.activo}}</td>
+                        <td>{{product.presentacion}}</td>
+                        <td>${{product.precio}}</td>
+                        <td>
+                            <button type="button" title="editar" class="btn btn-warning" data-toggle="collapse" 
+                            [attr.data-target]="'#' + product.id" aria-expanded="false" [attr.aria-controls]="product.id"
+                            ><i class="fas fa-edit"></i></button> 
+                            <button type="button" title="eliminar" class="btn btn-danger ml-5" (click)="deleteProduct(product.id)"><i class="fas fa-trash-alt"></i></button>  
+                        </td>
+                      </tr>     
+                    </tbody>
+                  </table>
+                </div>   
+              </div>
             </div>
-           
+            
         </div>
     </div>
 </div>
