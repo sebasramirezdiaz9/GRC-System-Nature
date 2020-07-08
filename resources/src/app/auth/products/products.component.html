@@ -28,19 +28,25 @@
                   </div>
                   <div class="col-md-2">
                      
-                        <input class="form-control" type="text" placeholder="Activo" formControlName="activo" name="activo">
-                      
+                        <input class="form-control" type="text" placeholder="Activo" formControlName="activo" name="activo" [ngClass]="{'is-invalid': !form.get('activo').valid}">
+                        <div *ngIf="form.controls['activo'].errors?.required" class="invalid-feedback">
+                          El activo es obligatorio
+                        </div>
                   </div>
                   
                   <div class="col-md-2">
                      
-                    <input class="form-control" type="text" placeholder="Presentación" formControlName="presentacion" name="presentacion">
-                  
+                    <input class="form-control" type="text" placeholder="Presentación" formControlName="presentacion" name="presentacion" [ngClass]="{'is-invalid': !form.get('presentacion').valid}">
+                    <div *ngIf="form.controls['presentacion'].errors?.required" class="invalid-feedback">
+                      La presentación es obligatoria
+                    </div>
                 </div>
                   <div class="col-md-2">
                    
-                      <input class="form-control" type="number" placeholder="Precio" formControlName="precio" name="precio">
-                    
+                      <input class="form-control" type="number" placeholder="Precio" formControlName="precio" name="precio" [ngClass]="{'is-invalid': !form.get('precio').valid}">
+                      <div *ngIf="form.controls['precio'].errors?.required" class="invalid-feedback">
+                        El precio es obligatorio
+                      </div>
                     </div>
                   <div class="col-md-2">
                     <button type="submit" class="btn btn-success">Agregar</button>

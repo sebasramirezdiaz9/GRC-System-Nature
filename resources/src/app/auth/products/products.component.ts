@@ -41,8 +41,25 @@ export class ProductsComponent implements OnInit {
 
   async addProduct()
   {
+    var validate = true;
     const item = this.form.value;
-    console.log(item);
-    this.addItem(item);
+    Object.keys(this.form.controls).forEach(key => {
+      if(this.form.controls[key].status == 'INVALID')
+      {
+         validate = false;
+      }
+    });
+    if(validate)
+    {
+      this.addItem(item);
+    }
+    else{
+      Swal.fire(
+        'Revisa los campos',
+        'Vuelve a intentarlo de nuevo',
+        'error'
+      )
+    }
+    
   }
 }
