@@ -72,6 +72,18 @@ export class ProductsComponent implements OnInit {
     })
     
   }
+
+  editProduct(id, nombre, activo, presentacion, precio)
+  {
+    this.itemDoc = this.firestore.doc<Item>("productos/"+id); 
+    let item = {nombre: nombre, activo: activo, presentacion: presentacion, precio: precio};
+    this.itemDoc.update(item);
+    Swal.fire(
+      'Exito!',
+      'El producto ha sido actualizado',
+      'success'
+    );
+  }
   async addProduct()
   {
     var validate = true;
