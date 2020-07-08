@@ -31,15 +31,12 @@ i{
     font-size: 50px;
 }
 
-@media(max-width: 700px){
-    #sidebar-container .menu{
-       margin-left: 180px;
-        width: 600px;
-    }
+@media(min-width: 1000px){
 
-    #sidebar-container .logo{
-        padding: 1rem auto;
-        margin-left: 150px;
+    .margin{
+        margin-left: 500px;
     }
-
+    
 }
+
+
