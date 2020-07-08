@@ -17,22 +17,24 @@
         <div class="card-body">
             <div class="text-center" >
                 <br>
-                <form id="contactForm" [formGroup]="form">
+                <form id="contactForm" [formGroup]="form" (ngSubmit)="addProduct()">
                 <div class="row">
                   <div class="col-md-2">
                    
-                      <input class="form-control" placeholder="Producto" formControlName="nombre" name="nombre">
-                    
+                      <input class="form-control" placeholder="Producto" formControlName="nombre" name="nombre" [ngClass]="{'is-invalid': !form.get('nombre').valid}">
+                      <div *ngIf="form.controls['nombre'].errors?.required" class="invalid-feedback">
+                        El nombre es obligatorio
+                      </div>
                   </div>
                   <div class="col-md-2">
                      
-                        <input class="form-control" type="number" placeholder="Activo" formControlName="activo" name="activo">
+                        <input class="form-control" type="text" placeholder="Activo" formControlName="activo" name="activo">
                       
                   </div>
                   
                   <div class="col-md-2">
                      
-                    <input class="form-control" type="number" placeholder="Presentación" formControlName="presentacion" name="presentacion">
+                    <input class="form-control" type="text" placeholder="Presentación" formControlName="presentacion" name="presentacion">
                   
                 </div>
                   <div class="col-md-2">
@@ -41,7 +43,7 @@
                     
                     </div>
                   <div class="col-md-2">
-                    <button type="submit" class="btn btn-success">Registrar</button>
+                    <button type="submit" class="btn btn-success">Agregar</button>
                   </div>
                 </div>
               </form>
@@ -65,9 +67,9 @@
                     <tbody>
                       <tr *ngFor="let product of products | async">
                         <td>{{product.nombre}}</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{product.activo}}</td>
+                        <td>{{product.presentacion}}</td>
+                        <td>${{product.precio}}</td>
                         <td>
                             <button type="button" title="editar" class="btn btn-warning"><i class="fas fa-edit"></i></button> 
                             <button type="button" title="eliminar" class="btn btn-danger ml-5"><i class="fas fa-trash-alt"></i></button>  
