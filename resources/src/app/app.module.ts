@@ -39,7 +39,6 @@ import { StadisticsComponent } from './auth/stadistics/stadistics.component';
 import { ProductsComponent } from './auth/products/products.component';
 import { UsersComponent } from './auth/users/users.component';
 import { SalesRegisterComponent } from './auth/sales/sales-register/sales-register.component';
-import { LoadingComponent } from './auth/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -62,8 +61,7 @@ import { LoadingComponent } from './auth/loading/loading.component';
     StadisticsComponent,
     ProductsComponent,
     UsersComponent,
-    SalesRegisterComponent,
-    LoadingComponent
+    SalesRegisterComponent
   ],
   imports: [
     platformBrowser.BrowserModule,
