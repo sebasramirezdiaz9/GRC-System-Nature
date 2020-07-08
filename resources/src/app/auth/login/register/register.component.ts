@@ -47,6 +47,8 @@ export class RegisterComponent implements OnInit {
           title: 'El usuario se ha registrado correctamente',
           showConfirmButton: false,
           timer: 1500
+        }).then( res => {
+          window.location.reload();
         })
       }
     }catch(error)
