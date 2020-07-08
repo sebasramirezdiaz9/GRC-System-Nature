@@ -72,7 +72,7 @@
                     </thead>
                     <tbody>
                       <tr *ngFor="let product of products | async">
-                        <td>{{product.nombre}}
+                        <td>{{product.nombre | formatprice}}
                           <div class="collapse mt-5" [id]="product.id">
                             <div class="card card-body">
                               <form (ngSubmit)="editProduct(product.id, name.value, activo.value, presentacion.value, precio.value)">                     
@@ -97,9 +97,9 @@
                             </div>
                         </div>
                         </td>
-                        <td>{{product.activo}}</td>
-                        <td>{{product.presentacion}}</td>
-                        <td>${{product.precio}}</td>
+                        <td>{{product.activo | formatprice}}</td>
+                        <td>{{product.presentacion | formatprice}}</td>
+                        <td>{{product.precio | currency}}</td>
                         <td>
                             <button type="button" title="editar" class="btn btn-warning" data-toggle="collapse" 
                             [attr.data-target]="'#' + product.id" aria-expanded="false" [attr.aria-controls]="product.id"

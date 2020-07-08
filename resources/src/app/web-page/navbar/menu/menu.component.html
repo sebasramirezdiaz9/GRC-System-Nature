@@ -1,11 +1,11 @@
-
-            <a routerLink="/system/register" routerLinkActive="active" class="d-block text-light p-3">
+        <div *ngIf="user$ | async as user">
+            <a routerLink="/system/register" routerLinkActive="active" *ngIf="user.uid === 'rwyGTkSM1xdvXrZaWnY3oCkpTYe2' " class="d-block text-light p-3">
                 <i class="fas fa-users"></i>  Usuarios
             </a>
             <a routerLink="/system/stadistics" routerLinkActive="active"  class="d-block text-light p-3">
-                <i class="fas fa-chart-line"></i>  Estadisticas
+                <i class="fas fa-chart-line"></i> Estadisticas
             </a>
-            <a routerLink="/system/sales" routerLinkActive="active"  class="d-block text-light p-3">
+            <a routerLink="/system/sales" routerLinkActive="active" *ngIf="user.uid === 'rwyGTkSM1xdvXrZaWnY3oCkpTYe2' " class="d-block text-light p-3">
                 <i class="fas fa-file-invoice-dollar"></i>  Ventas
             </a>
             <a routerLink="/system/inventory" routerLinkActive="active"  class="d-block text-light p-3">
@@ -17,6 +17,7 @@
             <a routerLink="/system/commissions" routerLinkActive="active"  class="d-block text-light p-3">
                 <i class="fas fa-money-bill-wave"></i>  Comisiones
             </a>
+        </div>  
             <ngx-spinner
             bdColor="rgba(51,51,51,0.8)"
             size="medium"
