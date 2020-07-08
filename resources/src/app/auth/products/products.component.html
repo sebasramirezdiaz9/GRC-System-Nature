@@ -10,7 +10,7 @@
         </div>
     </div>
 
-    <div class="card " style="width: 85rem;">
+    <div class="card">
         <div class="card-header" style="background-color:white;height: 50px;">
             <h1> Productos</h1>
           </div>
@@ -20,14 +20,14 @@
                 <form id="contactForm" >
                 <div class="row">
                   <div class="col-md-2">
-                    
-                    <input class="form-control" placeholder="Producto" formControlName="product" name="product">
-                 
+                    <div [formGroup]="myGroup">
+                      <input class="form-control" placeholder="Producto" formControlName="product" name="product">
+                    </div>
                   </div>
                   <div class="col-md-2">
-                    
-                      <input class="form-control" type="number" placeholder="Cantidad" formControlName="cant" name="cant">
-                   
+                      <div [formGroup]="myGroup">
+                        <input class="form-control" type="number" placeholder="Cantidad" formControlName="cant" name="cant">
+                      </div>
                   </div>
                   
                   <div class="col-md-3">
@@ -35,13 +35,17 @@
                         <div class="input-group-prepend">
                           <div class="input-group-text">Caducidad</div>
                         </div>
+                        <div [formGroup]="myGroup">
                             <input class="form-control" type="date" placeholder="Caducidad" formControlName="date"
                             name="date">
+                          </div>
                     </div>
                   </div>
                   <div class="col-md-2">
-                    <input class="form-control" type="number" placeholder="Precio" formControlName="price" name="price">
-                </div>
+                    <div [formGroup]="myGroup">
+                      <input class="form-control" type="number" placeholder="Precio" formControlName="price" name="price">
+                    </div>
+                    </div>
                   <div class="col">
                     <button type="submit" class="btn btn-success">Registrar</button>
                   </div>
