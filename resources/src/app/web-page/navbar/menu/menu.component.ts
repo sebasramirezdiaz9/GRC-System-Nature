@@ -10,12 +10,10 @@ import { NgxSpinnerService } from "ngx-spinner";
   providers: [AuthService]
 })
 export class MenuComponent implements OnInit {
-  public user: any;
+  public user$: Observable<any>;
 
   constructor(private authSvc: AuthService, private spinner: NgxSpinnerService) {
-    this.authSvc.afAuth.user.subscribe(e => {
-      this.user = e;
-    });
+    this.user$ = this.authSvc.afAuth.user;
   }
 
   ngOnInit(): void {
