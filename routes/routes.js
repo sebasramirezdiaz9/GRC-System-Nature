@@ -15,4 +15,5 @@ const prefix = '/api';
 
   router.post(prefix + "/sales", controller.storeSale);
 
+
 module.exports = router;

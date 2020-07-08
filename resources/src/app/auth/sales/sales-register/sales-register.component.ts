@@ -3,6 +3,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import Swal from 'sweetalert2';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { AuthService } from './../../service/auth.service';
 
 @Component({
   selector: 'app-sales-register',
@@ -16,10 +17,15 @@ export class SalesRegisterComponent implements OnInit {
   total:number = 0;
   saleProducts:any[] = [];
   total_final = 0;
+  user$:any;
   
-  constructor(public firestore: AngularFirestore, private http: HttpClient) {
+  constructor(public firestore: AngularFirestore, 
+              private http: HttpClient, private authSvc: AuthService) {
     firestore.collection('productos').valueChanges().subscribe(res => {
       this.products = res;
+    });
+    this.authSvc.afAuth.user.subscribe( e => {
+      this.user$ = e;
     });
    }
 
@@ -81,10 +87,11 @@ export class SalesRegisterComponent implements OnInit {
     let folio =  Math.floor(Math.random() * (9999 - 1000) + 1000);
 
     let sale = {
-      products: this.saleProducts,
+      productos: this.saleProducts,
       fecha: date,
       folio: folio,
-      total: this.total_final
+      total: this.total_final,
+      usuario: this.user$.email
     }
 
     let headers = new HttpHeaders().set('Content-Type','application/json');
