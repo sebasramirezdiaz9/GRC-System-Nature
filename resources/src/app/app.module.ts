@@ -40,6 +40,7 @@ import { ProductsComponent } from './auth/products/products.component';
 import { UsersComponent } from './auth/users/users.component';
 import { SalesRegisterComponent } from './auth/sales/sales-register/sales-register.component';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { FormatpricePipe } from './formatprice.pipe';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { NgxSpinnerModule } from "ngx-spinner";
     StadisticsComponent,
     ProductsComponent,
     UsersComponent,
-    SalesRegisterComponent
+    SalesRegisterComponent,
+    FormatpricePipe
   ],
   imports: [
     platformBrowser.BrowserModule,
