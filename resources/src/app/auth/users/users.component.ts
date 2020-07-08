@@ -34,7 +34,18 @@ export class UsersComponent implements OnInit {
               email: email,
               password: password
             }, {headers: headers}).subscribe( response => {
-              console.log('Operacion Exitosa');
+              Swal.fire(
+                'Exito!',
+                'El usuario ha sido modificado exitosamente',
+                'success'
+              )
+            },
+            error => {
+              Swal.fire(
+                'Error!',
+                'El usuario necesita un correo electronico',
+                'error'
+              )
             });
 
     setTimeout(t => {
