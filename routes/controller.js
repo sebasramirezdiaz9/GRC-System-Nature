@@ -10,6 +10,7 @@ admin.initializeApp({
   });
 
 var firebase = admin.database();  
+var db = admin.firestore();
 
 //Method user into controller
 async function sendMail(user, callback) {
@@ -95,6 +96,16 @@ const controller = {
         })
         .catch(err => {
           res.status(400).send('Error en el servidor');
+        });
+      },
+      storeSale(req, res) {
+        var addDoc = db.collection('sales').add({
+          fecha: req.body.fecha,
+          productos: req.body.products,
+          folio: req.body.folio,
+          total: req.body.total
+        }).then(ref => {
+          res.status(200).send(addDoc);
         });
       }
 }
