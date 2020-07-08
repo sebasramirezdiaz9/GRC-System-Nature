@@ -85,6 +85,7 @@ export class ProductsComponent implements OnInit {
       'success'
     );
   }
+  
   async addProduct()
   {
     var validate = true;

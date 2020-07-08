@@ -68,6 +68,7 @@ const controller = {
           res.send(info);
         });
       },
+      // Update a user
       updateUser(req, res){
         console.log(req.body);
         if (req.body.password != null && req.body.password != '') {
@@ -89,6 +90,7 @@ const controller = {
         });
          
       },
+      // Delete user
       deleteUser(req, res) {
         admin.auth().deleteUser(req.query.uid)
         .then(response => {
@@ -98,12 +100,14 @@ const controller = {
           res.status(400).send('Error en el servidor');
         });
       },
+      // Store a new sale
       storeSale(req, res) {
         var addDoc = db.collection('sales').add({
           fecha: req.body.fecha,
-          productos: req.body.products,
+          productos: req.body.productos,
           folio: req.body.folio,
-          total: req.body.total
+          total: req.body.total,
+          usuario: req.body.usuario
         }).then(ref => {
           res.status(200).send(addDoc);
         });

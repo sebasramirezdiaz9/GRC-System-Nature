@@ -77,8 +77,5 @@ export class UsersComponent implements OnInit {
         })
       }
     })
-    setTimeout(t => {
-      
-    }, 500);
   }
 }
