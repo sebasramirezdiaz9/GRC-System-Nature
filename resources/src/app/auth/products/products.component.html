@@ -17,36 +17,30 @@
         <div class="card-body">
             <div class="text-center" >
                 <br>
-                <form id="contactForm" >
+                <form id="contactForm" [formGroup]="form">
                 <div class="row">
                   <div class="col-md-2">
                    
-                      <input class="form-control" placeholder="Producto" formControlName="product" name="product">
+                      <input class="form-control" placeholder="Producto" formControlName="nombre" name="nombre">
                     
                   </div>
                   <div class="col-md-2">
                      
-                        <input class="form-control" type="number" placeholder="Cantidad" formControlName="cant" name="cant">
+                        <input class="form-control" type="number" placeholder="Activo" formControlName="activo" name="activo">
                       
                   </div>
                   
-                  <div class="col-md-3">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">Caducidad</div>
-                        </div>
-                       
-                            <input class="form-control" type="date" placeholder="Caducidad" formControlName="date"
-                            name="date">
-                          
-                    </div>
-                  </div>
+                  <div class="col-md-2">
+                     
+                    <input class="form-control" type="number" placeholder="Presentación" formControlName="presentacion" name="presentacion">
+                  
+                </div>
                   <div class="col-md-2">
                    
-                      <input class="form-control" type="number" placeholder="Precio" formControlName="price" name="price">
+                      <input class="form-control" type="number" placeholder="Precio" formControlName="precio" name="precio">
                     
                     </div>
-                  <div class="col">
+                  <div class="col-md-2">
                     <button type="submit" class="btn btn-success">Registrar</button>
                   </div>
                 </div>
