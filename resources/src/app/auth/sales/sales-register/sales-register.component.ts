@@ -83,7 +83,7 @@ export class SalesRegisterComponent implements OnInit {
 
   //Create sale
   async createSale() {
-    let date = new Date().toLocaleDateString();
+    let date = new Date();
     let folio =  Math.floor(Math.random() * (9999 - 1000) + 1000);
 
     let sale = {

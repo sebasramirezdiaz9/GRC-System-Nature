@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { HttpClient } from '@angular/common/http';
 import Swal from 'sweetalert2';
 export interface Item { total: string; }
 import { map } from 'rxjs/operators';
@@ -16,7 +15,7 @@ export class SalesComponent implements OnInit {
   private itemsCollection: AngularFirestoreCollection<Item>;
   private itemDoc: AngularFirestoreDocument;
 
-  constructor(public firestore: AngularFirestore, private http:HttpClient) {
+  constructor(public firestore: AngularFirestore) {
     this.getSales();
    }
 
@@ -54,5 +53,4 @@ export class SalesComponent implements OnInit {
       }
     });
   }
-  
 }
