@@ -1,5 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+.danger-icon{
+    font-size : 20px !important;
+    color: red;
+    padding-left: 0px !important;
+}
+footer{
+    background-color: rgb(245, 245, 245)  !important;
+}
 
+.card{
+    width: 100% !important;
+}
+
+.mat-card
+{
+    min-height: 850px;
+}

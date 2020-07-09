@@ -1,0 +1,42 @@
+a:hover{
+    text-decoration: none;
+}
+
+#body{
+    overflow: hidden;
+    font-weight: 200;
+    
+   
+   
+}
+
+.color{
+    background-color:rgba(65,196,72);
+}
+
+#sidebar-container{
+    min-height: 100vh;
+    
+   
+}
+
+#sidebar-container .menu{
+    width: 150px;
+    
+}
+
+#sidebar-container .logo{
+    padding: 1rem 2.5rem;
+}
+
+
+  
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    color: green !important;
+}
+  
+
+::ng-deep .mat-focused .mat-form-field-underline .mat-form-field-ripple{
+    background-color: green !important;
+}

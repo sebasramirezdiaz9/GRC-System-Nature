@@ -143,6 +143,19 @@
     </mat-accordion>
     <br>
 </mat-card>
+
+    <div class="mt-3">
+        <button (click)="getProducts()"  class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+        Descuentos de la semana
+        </button>
+        <div class="collapse" id="collapseExample2">
+            <div class="card card-body">
+                <qrcode [qrdata]="productsList" [width]="256" ></qrcode>
+            </div>
+        </div>
+        
+    </div>
+
 <mat-card-footer class="footer" >
     <a  href=""><i class="fab fa-facebook"></i></a>
     <a href=""><i class="fab fa-instagram"></i></a>

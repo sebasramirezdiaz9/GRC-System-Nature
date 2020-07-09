@@ -1,1 +1,90 @@
-<p>sales works!</p>
+<div class="d-flex" id="body">
+    <div id="sidebar-container" class="color">
+        <div class="logo">
+            <a [routerLink]="['/system/welcome']">
+                <img src="assets/logo-circle.png" style="width: 80px; height: 80px;">
+            </a>
+        </div>
+        <div class="menu">
+            <app-menu></app-menu>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header" style="background-color:white;height: 50px;">
+            <h1>Ventas</h1>
+          </div>
+        <div class="card-body">
+            <div class="text-right" >
+                <button routerLink="/system/registersales" type="button" class="btn btn-secondary">Agregar venta <i class="fas fa-cart-plus"></i></button>
+              
+            </div>
+            <br>
+            <div class="table-responsive-xl">
+                <table class="table table-hover">
+                    <thead >
+                      <tr>
+                        <th scope="col">Folio</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Importe</th>
+                        <th scope="col">Acciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>                    
+                        <tr *ngFor="let sale of sales | async">
+                            <td>{{ '#' + sale.folio }}
+                                <div class="collapse mt-5" [id]="sale.id">
+                                    <div class="card card-body">
+                                        <label for="">Articulos vendidos</label>
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Nombre</th>
+                                                <th scope="col">Precio</th>
+                                                <th scope="col">Cantidad</th>
+                                                <th scope="col">Total</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let item of sale.productos; let i = index">
+                                                    <th scope="row">{{ i + 1 }}</th>
+                                                    <td>{{ item.product_name }}</td>
+                                                    <td>{{ '$ ' + item.precio_unitario }}</td>
+                                                    <td>{{ item.quantity }}</td>
+                                                    <td>{{ '$ ' + item.total }}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="bg bg-blue">
+                                            <label for="">{{ 'Vendedor: ' + sale.usuario }}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>{{ sale.fecha }}</td>
+                            <td>{{ '$ ' + sale.total }}</td>
+                            <td>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <button type="button" class="btn btn-primary"  data-toggle="collapse" 
+                                        [attr.data-target]="'#' + sale.id" aria-expanded="false" [attr.aria-controls]="sale.id">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button type="button" class="btn btn-danger" (click)="deleteSale(sale.id)" >
+                                            <i class="fas fa-minus-circle"></i>
+                                        </button>
+                                    </div>
+                                </div>     
+                            </td>
+                        </tr>                     
+                    </tbody>
+                  </table>
+
+            </div>
+            
+
+    
+        </div>
+    </div>
+</div>

@@ -9,16 +9,110 @@
             <app-menu></app-menu>
         </div>
     </div>
+
     <div class="card">
+        <div class="card-header" style="background-color:white;height: 50px;">
+            <h1> Productos</h1>
+          </div>
         <div class="card-body">
-            <div class="alert alert-info" role="alert">
-                Listado de la coleccion productos en la base de datos de FireBase.
+            <div class="text-center" >
+                <br>
+                <form id="contactForm" [formGroup]="form" (ngSubmit)="addProduct()">
+                <div class="row">
+                  <div class="col-md-2">
+                   
+                      <input class="form-control" placeholder="Producto" formControlName="nombre" name="nombre" [ngClass]="{'is-invalid': !form.get('nombre').valid}">
+                      <div *ngIf="form.controls['nombre'].errors?.required" class="invalid-feedback">
+                        El nombre es obligatorio
+                      </div>
+                  </div>
+                  <div class="col-md-2">
+                     
+                        <input class="form-control" type="text" placeholder="Activo" formControlName="activo" name="activo" [ngClass]="{'is-invalid': !form.get('activo').valid}">
+                        <div *ngIf="form.controls['activo'].errors?.required" class="invalid-feedback">
+                          El activo es obligatorio
+                        </div>
+                  </div>
+                  
+                  <div class="col-md-2">
+                     
+                    <input class="form-control" type="text" placeholder="Presentación" formControlName="presentacion" name="presentacion" [ngClass]="{'is-invalid': !form.get('presentacion').valid}">
+                    <div *ngIf="form.controls['presentacion'].errors?.required" class="invalid-feedback">
+                      La presentación es obligatoria
+                    </div>
+                </div>
+                  <div class="col-md-2">
+                   
+                      <input class="form-control" type="number" placeholder="Precio" formControlName="precio" name="precio" [ngClass]="{'is-invalid': !form.get('precio').valid}">
+                      <div *ngIf="form.controls['precio'].errors?.required" class="invalid-feedback">
+                        El precio es obligatorio
+                      </div>
+                    </div>
+                  <div class="col-md-2">
+                    <button type="submit" class="btn btn-success">Agregar</button>
+                  </div>
+                </div>
+              </form>
+              <br>
+              
             </div>
-            <ul class="list-group">
-                <li class="list-group-item" *ngFor="let product of products | async" >
-                    {{product.nombre}}
-                </li>
-            </ul>
+            <br>
+            <div class="card">
+              <div class="card-body">
+                <div class="table-responsive-xl">
+                  <table class="table table-hover">
+                    <thead >
+                      <tr>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Activo</th>
+                        <th scope="col">Presentación</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Acciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let product of products | async">
+                        <td>{{product.nombre | formatprice}}
+                          <div class="collapse mt-5" [id]="product.id">
+                            <div class="card card-body">
+                              <form (ngSubmit)="editProduct(product.id, name.value, activo.value, presentacion.value, precio.value)">                     
+                                   <div class="form-group">
+                                        <label for="">Nombre</label>
+                                        <input type="text" #name [value]="product.nombre" class="form-control">
+                                   </div>
+                                   <div class="form-group">
+                                        <label for="">Activo</label>                              
+                                        <input type="text" #activo  [value]="product.activo" class="form-control">
+                                   </div>
+                                   <div class="form-group">
+                                      <label for="">Presentación</label>                              
+                                      <input type="text" #presentacion [value]="product.presentacion" class="form-control">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="">Precio</label>                              
+                                    <input type="text" #precio [value]="product.precio" class="form-control">
+                                  </div>
+                                <button type="submit" class="btn btn-success float-right"  >Editar</button> 
+                              </form>                     
+                            </div>
+                        </div>
+                        </td>
+                        <td>{{product.activo | formatprice}}</td>
+                        <td>{{product.presentacion | formatprice}}</td>
+                        <td>{{product.precio | currency}}</td>
+                        <td>
+                            <button type="button" title="editar" class="btn btn-warning" data-toggle="collapse" 
+                            [attr.data-target]="'#' + product.id" aria-expanded="false" [attr.aria-controls]="product.id"
+                            ><i class="fas fa-edit"></i></button> 
+                            <button type="button" title="eliminar" class="btn btn-danger ml-5" (click)="deleteProduct(product.id)"><i class="fas fa-trash-alt"></i></button>  
+                        </td>
+                      </tr>     
+                    </tbody>
+                  </table>
+                </div>   
+              </div>
+            </div>
+            
         </div>
     </div>
 </div>

@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class RegisterComponent implements OnInit {
   form: any;
-  
+
   nameFormControl = new FormControl("", [
     Validators.required,
     Validators.minLength(4)
@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  
+
 
   ngOnInit(): void {}
 
@@ -47,6 +47,8 @@ export class RegisterComponent implements OnInit {
           title: 'El usuario se ha registrado correctamente',
           showConfirmButton: false,
           timer: 1500
+        }).then( res => {
+          window.location.reload();
         })
       }
     }catch(error)

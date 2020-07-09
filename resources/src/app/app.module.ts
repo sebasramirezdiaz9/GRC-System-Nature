@@ -20,6 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './auth/login/login/login.component';
 import { RegisterComponent} from './auth/login/register/register.component';
 import { ChartsModule } from 'ng2-charts';
+import { QRCodeModule } from 'angularx-qrcode';
+
 
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestore } from '@angular/fire/firestore';
@@ -35,6 +37,10 @@ import { CommissionsComponent } from './auth/commissions/commissions.component';
 import { InventoryComponent } from './auth/inventory/inventory.component';
 import { StadisticsComponent } from './auth/stadistics/stadistics.component';
 import { ProductsComponent } from './auth/products/products.component';
+import { UsersComponent } from './auth/users/users.component';
+import { SalesRegisterComponent } from './auth/sales/sales-register/sales-register.component';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { FormatpricePipe } from './formatprice.pipe';
 
 @NgModule({
   declarations: [
@@ -55,8 +61,10 @@ import { ProductsComponent } from './auth/products/products.component';
     CommissionsComponent,
     InventoryComponent,
     StadisticsComponent,
-    ProductsComponent
-  
+    ProductsComponent,
+    UsersComponent,
+    SalesRegisterComponent,
+    FormatpricePipe
   ],
   imports: [
     platformBrowser.BrowserModule,
@@ -65,6 +73,7 @@ import { ProductsComponent } from './auth/products/products.component';
     MaterialModule,
     FlexLayoutModule,
     ChartsModule,
+    NgxSpinnerModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDpFWj4lMAXPF6su9bX53L1fMs69b0pr10'
     }),
@@ -75,9 +84,8 @@ import { ProductsComponent } from './auth/products/products.component';
     HttpClientModule,
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebaseConfig ),
-    AngularFireAuthModule
-
-
+    AngularFireAuthModule,
+    QRCodeModule
   ],
   providers: [],
   bootstrap: [AppComponent],

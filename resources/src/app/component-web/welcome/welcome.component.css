@@ -5,6 +5,9 @@
    
    
 }
+.hrefstyle{
+    color: white;
+}
 
 .color{
     background-color:rgba(65,196,72);
@@ -24,15 +27,16 @@
     padding: 1rem 2.5rem;
 }
 
-@media(max-width: 700px){
-    #sidebar-container .menu{
-       margin-left: 180px;
-        width: 600px;
-    }
-
-    #sidebar-container .logo{
-        padding: 1rem auto;
-        margin-left: 150px;
-    }
-
+i{
+    font-size: 50px;
 }
+
+@media(min-width: 1000px){
+
+    .margin{
+        margin-left: 500px;
+    }
+    
+}
+
+
