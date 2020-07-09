@@ -22,16 +22,16 @@ export class StadisticsComponent implements OnInit {
       }
     }
   };
-  public barChartLabels: Label[] = ['2008', '2009', '2010', '2011', '2012'];
+  public barChartLabels: Label[] = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'agos', 'sep', 'oct', 'nov', 'dic'];
   public barChartType: ChartType = 'bar';
   public barChartLegend = true;
 
   public barChartData: ChartDataSets[] = [
-    { data: [0, 0, 0, 0, 0], label: 'Enero' },
-    { data: [0, 0, 0, 0, 0], label: 'Febreo' }
+    { data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], label: 'Ventas' },
   ];
 
-  constructor(private fire:AngularFirestore) {}
+  constructor(private fire:AngularFirestore) {
+  }
 
   ngOnInit() {
   }
@@ -46,16 +46,23 @@ export class StadisticsComponent implements OnInit {
   }
 
   public randomize(): void {
+    this.barChartData[0].data = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     let cont:any[];
-    this.items = this.fire.collection('ventas').valueChanges(); 
+    this.items = this.fire.collection('sales').valueChanges(); 
     this.items.subscribe( e => {
       cont = e;
     });  
-    // Only Change 3 values
+    
+    let months:Array<any> = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     setTimeout(e => {
-      this.barChartData[0].data = cont[0].sales;
-      this.barChartData[1].data = cont[1].sales
-    }, 3000);
+      cont.forEach(element => {
+        months[element.fecha.split("-",2)[1][1]-1] += element.total;
+      });
+    }, 2000);
+
+    setTimeout(e => {
+        this.barChartData[0].data = months;
+    }, 2000);
   }
 
 }
